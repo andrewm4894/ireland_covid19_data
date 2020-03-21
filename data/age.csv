@@ -1,0 +1,41 @@
+age,number,tag,published_date,source
+<1,2.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+1 - 4,2.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+5 - 14,10.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+15 - 24,56.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+25 - 34,110.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+35 - 44,121.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+45 - 54,95.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+55 - 64,85.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+65+,102.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Unknown,1.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total,584.0,age,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+<1,1.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+1 - 4,1.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+5 - 14,9.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+15 - 24,47.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+25 - 34,78.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+35 - 44,96.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+45 - 54,62.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+55 - 64,69.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+65+,75.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total,438.0,age,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+<1,1.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+1 - 4,1.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+5 - 14,8.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+15 - 24,38.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+25 - 34,64.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+35 - 44,78.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+45 - 54,49.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+55 - 64,54.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+65+,57.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Total,350.0,age,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+<1,1.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+1 - 4,0.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+5 - 14,4.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+15 - 24,28.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+25 - 34,48.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+35 - 44,62.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+45 - 54,40.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+55 - 64,46.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+65+,42.0,age,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/

@@ -1,0 +1,9 @@
+gender,number,tag,published_date,source
+Female,257.0,gender,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Male,320.0,gender,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Unknown,7.0,gender,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total,584.0,gender,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Male,241.0,gender,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Female,189.0,gender,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Unknown,7.0,gender,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total,438.0,gender,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/

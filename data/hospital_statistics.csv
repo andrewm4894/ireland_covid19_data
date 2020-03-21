@@ -1,0 +1,25 @@
+measure,tag,published_date,source
+Total number of cases,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total number hospitalised,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total number admitted to ICU,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total number of deaths,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Case fatality rate,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total number of healthcare workers,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Number clusters notified,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Median age,hospital_statistics,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total number of cases,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total number hospitalised,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total number admitted to ICU,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total number deaths,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Case fatality rate,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total number healthcare workers,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Number clusters notified,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Median age,hospital_statistics,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total number of cases,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Total number hospitalised,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Total number admitted to ICU,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Total number deaths,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Case fatality rate,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Total number healthcare workers,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Number clusters notified,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Median age,hospital_statistics,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
