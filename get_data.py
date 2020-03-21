@@ -87,8 +87,10 @@ for press_release_link in press_release_links:
 
             for df in df_list:
 
+                # make a big string of all the raw data to help in tagging it below
                 raw_data = '|'.join([str(x).lower() for x in df.values.tolist()])
 
+                # look for specific things in the raw data to determine what table we are dealing with
                 if 'total number of cases' in raw_data:
                     tag = 'hospital_statistics'
                     df = df.rename({0: 'measure', 1: 'number', 2: 'pct'}, axis='columns')
@@ -168,4 +170,5 @@ df_age.to_csv('data/age.csv', index=False)
 df_spread.to_csv('data/spread.csv', index=False)
 df_healthcare_workers.to_csv('data/healthcare_workers.csv', index=False)
 df_county.to_csv('data/county.csv', index=False)
+
 
