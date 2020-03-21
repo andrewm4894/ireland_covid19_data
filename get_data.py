@@ -138,22 +138,22 @@ for press_release_link in press_release_links:
             tag = df['tag'].unique()[0]
             if tag == 'hospital_statistics':
                 df_hospital_statistics = df_hospital_statistics.append(df)
-                df_hospital_statistics = df_hospital_statistics.dropna(axis=1)
+                df_hospital_statistics = df_hospital_statistics.dropna(how='all', axis=1)
             elif tag == 'gender':
                 df_gender = df_gender.append(df)
-                df_gender = df_gender.dropna(axis=1)
+                df_gender = df_gender.dropna(how='all', axis=1)
             elif tag == 'age':
                 df_age = df_age.append(df)
-                df_age = df_age.dropna(axis=1)
+                df_age = df_age.dropna(how='all', axis=1)
             elif tag == 'spread':
                 df_spread = df_spread.append(df)
-                df_spread = df_spread.dropna(axis=1)
+                df_spread = df_spread.dropna(how='all', axis=1)
             elif tag == 'healthcare_workers':
                 df_healthcare_workers = df_healthcare_workers.append(df)
-                df_healthcare_workers = df_healthcare_workers.dropna(axis=1)
+                df_healthcare_workers = df_healthcare_workers.dropna(how='all', axis=1)
             elif tag == 'county':
                 df_county = df_county.append(df)
-                df_county = df_county.dropna(axis=1)
+                df_county = df_county.dropna(how='all', axis=1)
 
     else:
 

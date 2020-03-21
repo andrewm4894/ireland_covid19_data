@@ -1,17 +1,17 @@
-measure,tag,published_date,source
-Community transmission,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-Close contact with confirmed case,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-Travel Abroad,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-Under investigation,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-Community transmission,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-Contact with a confirmed case,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-Travel abroad,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-Under investigation,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-Community transmission,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-Contact with a confirmed case,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-Travel abroad,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-Under investigation,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-Community transmission,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
-Contact with a confirmed case,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
-Travel abroad,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
-Under investigation,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+measure,number,tag,published_date,source,pct
+Community transmission,179.0,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/,
+Close contact with confirmed case,97.0,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/,
+Travel Abroad,148.0,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/,
+Under investigation,160.0,spread,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/,
+Community transmission,,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/,0.4
+Contact with a confirmed case,,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/,0.21
+Travel abroad,,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/,0.39
+Under investigation,96.0,spread,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/,
+Community transmission,99.0,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/,0.35
+Contact with a confirmed case,59.0,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/,0.21
+Travel abroad,121.0,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/,0.43
+Under investigation,71.0,spread,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/,0.2
+Community transmission,60.0,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/,0.22
+Contact with a confirmed case,45.0,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/,0.17
+Travel abroad,113.0,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/,0.42
+Under investigation,53.0,spread,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/,0.2

@@ -1,17 +1,17 @@
-measure,number,tag,published_date,source
-Travel related,44.0,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-No foreign travel,96.0,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-Under investigation,7.0,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-Total,147.0,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
-Travel related,28.0,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-No foreign travel,55.0,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-Under investigation,1.0,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-Total,84.0,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
-Travel related,28.0,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-No foreign travel,55.0,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-Under investigation,1.0,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-Total,59.0,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
-Travel related,22.0,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
-No foreign travel,36.0,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
-Under investigation,1.0,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
-Total,59.0,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+measure,number,pct,tag,published_date,source
+Travel related,44.0,0.3,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+No foreign travel,96.0,0.65,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Under investigation,7.0,0.05,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Total,147.0,,healthcare_workers,2020-03-21,https://www.gov.ie/en/press-release/f0c391-statement-from-the-national-public-health-emergency-team-saturday-21/
+Travel related,28.0,0.33,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+No foreign travel,55.0,0.65,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Under investigation,1.0,0.01,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Total,84.0,,healthcare_workers,2020-03-20,https://www.gov.ie/en/press-release/3e7517-statement-from-the-national-public-health-emergency-team/
+Travel related,28.0,0.33,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+No foreign travel,55.0,0.65,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Under investigation,1.0,0.01,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Total,59.0,1.0,healthcare_workers,2020-03-19,https://www.gov.ie/en/press-release/ebd698-statement-from-the-national-public-health-emergency-team-19-march/
+Travel related,22.0,0.37,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+No foreign travel,36.0,0.61,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+Under investigation,1.0,0.02,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
+Total,59.0,1.0,healthcare_workers,2020-03-18,https://www.gov.ie/en/press-release/73ada6-statement-from-the-national-public-health-emergency-team-18-march/
