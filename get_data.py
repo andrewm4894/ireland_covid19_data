@@ -119,6 +119,17 @@ for press_release_link in press_release_links:
             else:
                 tag = 'UNKNOWN'
 
+            # clean up first col
+            df[df.columns[0]] = df[df.columns[0]].str.lower()
+            df[df.columns[0]] = df[df.columns[0]].str.replace(' of ', ' ')
+            df[df.columns[0]] = df[df.columns[0]].str.replace(' to ', ' ')
+            df[df.columns[0]] = df[df.columns[0]].str.replace('total ', '')
+            df[df.columns[0]] = df[df.columns[0]].str.replace('number ', '')
+            df[df.columns[0]] = df[df.columns[0]].str.replace('close ', '')
+            df[df.columns[0]] = df[df.columns[0]].str.replace(' with ', ' ')
+            df[df.columns[0]] = df[df.columns[0]].str.replace(' a ', ' ')
+            df[df.columns[0]] = df[df.columns[0]].str.replace(' ', '_')
+
             #print(tag)
 
             # clean up data a bit
@@ -177,4 +188,21 @@ df_spread.to_csv('data/spread.csv', index=False)
 df_healthcare_workers.to_csv('data/healthcare_workers.csv', index=False)
 df_county.to_csv('data/county.csv', index=False)
 
+# create a daily stats wide table
+df_daily_stats = df_hospital_statistics.pivot(
+    index='published_date', columns='measure', values=['number', 'pct']
+).reset_index()
+df_daily_stats.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_daily_stats.columns]
+df_spread_daily = df_spread.pivot(index='published_date', columns='measure', values=['number', 'pct']).reset_index()
+df_spread_daily.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_spread_daily.columns]
+df_gender_daily = df_gender.pivot(index='published_date', columns='gender', values='number').reset_index()[['published_date', 'male', 'female']]
+df_county_daily = df_county.pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
+df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
+df_daily_stats = df_daily_stats.merge(df_gender_daily, 'outer', on='published_date')
+df_daily_stats = df_daily_stats.merge(df_county_daily, 'outer', on='published_date')
+# save to csv
+df_daily_stats.to_csv('data/daily_stats.csv', index=False)
 
+#%%
+
+#%%
