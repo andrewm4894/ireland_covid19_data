@@ -79,61 +79,67 @@ for press_release_link in press_release_links:
         # read all tables into a list of data frames
         df_list = pd.read_html(press_release_link)
 
+        #print(df_list)
+
+        # add a tag to each df relating to what table it is from
+        df_list_tagged = []
+
         # now process each data frame
         for df in df_list:
 
-            # add a tag to each df relating to what table it is from
-            df_list_tagged = []
+            #print(df)
 
-            for df in df_list:
+            # make a big string of all the raw data to help in tagging it below
+            raw_data = '|'.join([str(x).lower() for x in df.values.tolist()])
 
-                # make a big string of all the raw data to help in tagging it below
-                raw_data = '|'.join([str(x).lower() for x in df.values.tolist()])
+            # look for specific things in the raw data to determine what table we are dealing with
+            if 'total number of cases' in raw_data:
+                tag = 'hospital_statistics'
+                df = df.rename({0: 'measure', 1: 'number', 2: 'pct'}, axis='columns')
+            elif 'male' in raw_data:
+                tag = 'gender'
+                df = df.rename({0: 'gender', 1: 'number', 2: 'pct'}, axis='columns')
+            elif 'community transmission' in raw_data:
+                tag = 'spread'
+                if df.shape[1] == 2:
+                    df[2] = np.nan
+                df = df.rename({0: 'measure', 1: 'number', 2: 'pct'}, axis='columns')
+                df['pct'] = np.where(df['number'].astype(str).str.contains('%'), df['number'], df['pct'])
+            elif 'travel related' in raw_data:
+                tag = 'healthcare_workers'
+                df = df.rename({0: 'measure', 1: 'number', 2: 'pct'}, axis='columns')
+            elif 'dublin' in raw_data:
+                tag = 'county'
+                df = df.rename({0: 'county', 1: 'metric', 2: 'pct'}, axis='columns')
+            elif ('age group' in raw_data) & ('<1' in raw_data):
+                tag = 'age'
+                df = df.rename({0: 'age', 1: 'number', 2: 'pct'}, axis='columns')
+            elif ('<5' in raw_data) & ('65+' in raw_data):
+                tag = 'age_hospital'
+            else:
+                tag = 'UNKNOWN'
 
-                # look for specific things in the raw data to determine what table we are dealing with
-                if 'total number of cases' in raw_data:
-                    tag = 'hospital_statistics'
-                    df = df.rename({0: 'measure', 1: 'number', 2: 'pct'}, axis='columns')
-                elif 'male' in raw_data:
-                    tag = 'gender'
-                    df = df.rename({0: 'gender', 1: 'number', 2: 'pct'}, axis='columns')
-                elif 'community transmission' in raw_data:
-                    tag = 'spread'
-                    df = df.rename({0: 'measure', 1: 'number', 2: 'pct'}, axis='columns')
-                    df['pct'] = np.where(df['number'].astype(str).str.contains('%'), df['number'], df['pct'])
-                elif 'travel related' in raw_data:
-                    tag = 'healthcare_workers'
-                    df = df.rename({0: 'measure', 1: 'number', 2: 'pct'}, axis='columns')
-                elif 'dublin' in raw_data:
-                    tag = 'county'
-                    df = df.rename({0: 'county', 1: 'metric', 2: 'pct'}, axis='columns')
-                elif ('age group' in raw_data) & ('<1' in raw_data):
-                    tag = 'age'
-                    df = df.rename({0: 'age', 1: 'number', 2: 'pct'}, axis='columns')
-                elif ('<5' in raw_data) & ('65+' in raw_data):
-                    tag = 'age_hospital'
-                else:
-                    tag = 'UNKNOWN'
+            #print(tag)
 
-                # clean up data a bit
-                if 'number' in df.columns:
-                    df = df[df['number'] != 'Number of people']
-                    df = df[df['number'] != 'Number']
-                    df = df[df['number'] != '% known']
-                    df['number'] = np.where(df['number'].astype(str).str.contains('%'), np.nan, df['number'])
-                    df['number'] = df['number'].astype(float)
-                if 'pct' in df.columns:
-                    df = df[df['pct'] != '% of total']
-                    df['pct'] = df['pct'].astype(str).str.replace('%', '').astype(float) / 100
-                if 'metric' in df.columns:
-                    df = df[df['metric'] != 'Number of cases']
+            # clean up data a bit
+            if 'number' in df.columns:
+                df = df[df['number'] != 'Number of people']
+                df = df[df['number'] != 'Number']
+                df = df[df['number'] != '% known']
+                df['number'] = np.where(df['number'].astype(str).str.contains('%'), np.nan, df['number'])
+                df['number'] = df['number'].astype(float)
+            if 'pct' in df.columns:
+                df = df[df['pct'] != '% of total']
+                df['pct'] = df['pct'].astype(str).str.replace('%', '').astype(float) / 100
+            if 'metric' in df.columns:
+                df = df[df['metric'] != 'Number of cases']
 
-                # add some metadata
-                df['tag'] = tag
-                df['published_date'] = published_date
-                df['source'] = press_release_link
-                df_list_tagged.append(df)
-                #print(df_list_tagged)
+            # add some metadata
+            df['tag'] = tag
+            df['published_date'] = published_date
+            df['source'] = press_release_link
+            df_list_tagged.append(df)
+            #print(df_list_tagged)
 
         # break out df's and append to df specific for each table in the html
         for df in df_list_tagged:
