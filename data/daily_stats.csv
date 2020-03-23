@@ -1,6 +1,6 @@
-published_date,admitted_icu,case_fatality_rate,cases,clusters_notified,deaths,healthcare_workers,hospitalised,median_age,pct_admitted_icu,pct_case_fatality_rate,pct_cases,pct_clusters_notified,pct_deaths,pct_healthcare_workers,pct_hospitalised,pct_median_age,community_transmission,contact_confirmed_case,travel_abroad,under_investigation,pct_community_transmission,pct_contact_confirmed_case,pct_travel_abroad,pct_under_investigation,male,female,dublin,cork
-2020-03-19,7.0,,350.0,26.0,2.0,84.0,108.0,43.0,0.02,0.006,,0.07,0.006,0.24,0.31,,99.0,59.0,121.0,71.0,0.35,0.21,0.43,0.2,,,172,62
-2020-03-20,12.0,,438.0,27.0,3.0,114.0,140.0,44.0,0.03,0.006,,,0.006999999999999999,0.26,0.32,,,,,96.0,0.4,0.21,0.39,,241.0,189.0,225,66
-2020-03-21,13.0,0.5,584.0,29.0,3.0,147.0,173.0,44.0,,,,,,,,,179.0,97.0,148.0,160.0,,,,,320.0,257.0,320,88
-2020-03-22,17.0,0.6,712.0,35.0,4.0,159.0,211.0,44.0,,,,,,,,,,,,258.0,0.44,0.23,0.33,,393.0,311.0,402,101
-2020-03-18,,,,,,,,,,,,,,,,,60.0,45.0,113.0,53.0,0.22,0.17,0.42,0.2,,,129,48
+published_date,admitted_icu,case_fatality_rate,cases,clusters_notified,deaths,healthcare_workers,hospitalised,median_age,pct_admitted_icu,pct_case_fatality_rate,pct_cases,pct_clusters_notified,pct_deaths,pct_healthcare_workers,pct_hospitalised,pct_median_age,community_transmission,contact_confirmed_case,travel_abroad,under_investigation,pct_community_transmission,pct_contact_confirmed_case,pct_travel_abroad,pct_under_investigation,male,female,dublin,cork,cases_per_cluster,pct_male,pct_dublin,pct_community
+2020-03-19,7.0,,350.0,26.0,2.0,84.0,108.0,43.0,0.02,0.006,,0.07,0.005714285714285714,0.24,0.31,,99.0,59.0,121.0,71.0,0.35,0.21,0.43,0.2,,,172,62,13.461538461538462,,0.49142857142857144,0.28285714285714286
+2020-03-20,12.0,,438.0,27.0,3.0,114.0,140.0,44.0,0.03,0.006,,,0.00684931506849315,0.26,0.32,,40.0,21.0,39.0,96.0,,,,,241.0,189.0,225,66,16.22222222222222,0.5604651162790698,0.5136986301369864,0.091324200913242
+2020-03-21,13.0,0.5,584.0,29.0,3.0,147.0,173.0,44.0,,,,,0.005136986301369863,,,,179.0,97.0,148.0,160.0,,,,,320.0,257.0,320,88,20.137931034482758,0.5545927209705372,0.547945205479452,0.3065068493150685
+2020-03-22,17.0,0.6,712.0,35.0,4.0,159.0,211.0,44.0,,,,,0.0056179775280898875,,,,,,,258.0,0.44,0.23,0.33,,393.0,311.0,402,101,20.34285714285714,0.5582386363636364,0.5646067415730337,
+2020-03-18,,,,,,,,,,,,,,,,,60.0,45.0,113.0,53.0,0.22,0.17,0.42,0.2,,,129,48,,,,
