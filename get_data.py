@@ -44,6 +44,7 @@ df_age = pd.DataFrame()
 df_spread = pd.DataFrame()
 df_healthcare_workers = pd.DataFrame()
 df_county = pd.DataFrame()
+df_text = pd.DataFrame()
 
 # loop over each press release, pull out tables and wrangle accordingly
 for press_release_link in press_release_links:
@@ -70,6 +71,20 @@ for press_release_link in press_release_links:
             published_date = published_date.replace(month_string, '').strip()
             published_date = published_date.strip().zfill(2)
             published_date = f'2020-{month_num}-{published_date}'
+
+    # get some metrics from the text
+    patterns = [
+        ('There are now (.*) confirmed cases of COVID-19 in Ireland', 'txt_cases'),
+        ('There have now been (.*) COVID-19 related deaths in Ireland', 'txt_deaths'),
+        ('informed of (.*) new confirmed cases', 'txt_new_cases'),
+    ]
+    for pattern, name in patterns:
+        text = re.search(pattern, data, re.IGNORECASE)
+        if text:
+            value = float(text.group(1).replace(',', '').replace('seven', '7').replace('five', '5').replace('four', '4').replace('two', '2').replace('one', '1'))
+            df_tmp = pd.DataFrame([[published_date, name, value, press_release_link]],
+                                  columns=['published_date', 'variable', 'value', 'source'])
+            df_text = df_text.append(df_tmp)
 
     # if tables found then try process them
     if num_tables > 0:
@@ -187,6 +202,7 @@ df_age.to_csv('data/age.csv', index=False)
 df_spread.to_csv('data/spread.csv', index=False)
 df_healthcare_workers.to_csv('data/healthcare_workers.csv', index=False)
 df_county.to_csv('data/county.csv', index=False)
+df_text.to_csv('data/text.csv', index=False)
 
 # create a daily stats wide table
 df_daily_stats = df_hospital_statistics.pivot(
@@ -197,18 +213,23 @@ df_spread_daily = df_spread.pivot(index='published_date', columns='measure', val
 df_spread_daily.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_spread_daily.columns]
 df_gender_daily = df_gender.pivot(index='published_date', columns='gender', values='number').reset_index()[['published_date', 'male', 'female']]
 df_county_daily = df_county.pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
+df_text_wide = df_text.pivot(index='published_date', columns='variable', values='value').reset_index()
 df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_gender_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_county_daily, 'outer', on='published_date')
+df_daily_stats = df_daily_stats.merge(df_text_wide, 'outer', on='published_date')
 # add some derived fields
 df_daily_stats['cases_per_cluster'] = df_daily_stats['cases'] / df_daily_stats['clusters_notified']
 df_daily_stats['pct_male'] = df_daily_stats['male'] / (df_daily_stats['male'] + df_daily_stats['female'])
 df_daily_stats['pct_dublin'] = df_daily_stats['dublin'].astype(float) / df_daily_stats['cases']
 df_daily_stats['pct_deaths'] = df_daily_stats['deaths'] / df_daily_stats['cases']
 df_daily_stats['pct_community'] = df_daily_stats['community_transmission'] / df_daily_stats['cases']
+df_daily_stats['pct_hospitalised'] = df_daily_stats['hospitalised'] / df_daily_stats['cases']
+df_daily_stats['pct_icu'] = df_daily_stats['admitted_icu'] / df_daily_stats['cases']
 # save to csv
 df_daily_stats.to_csv('data/daily_stats.csv', index=False)
 
 #%%
+
 
 #%%

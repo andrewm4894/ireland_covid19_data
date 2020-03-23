@@ -1,4 +1,12 @@
 measure,number,tag,published_date,source,pct
+cases,836.0,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
+hospitalised,239.0,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
+admitted_icu,25.0,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
+deaths,6.0,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
+case_fatality_rate,0.7,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
+healthcare_workers,208.0,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
+clusters_notified,37.0,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
+median_age,44.0,hospital_statistics,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/,
 cases,712.0,hospital_statistics,2020-03-22,https://www.gov.ie/en/press-release/a01ff4-statement-from-the-national-public-health-emergency-team-on-sunday-2/,
 hospitalised,211.0,hospital_statistics,2020-03-22,https://www.gov.ie/en/press-release/a01ff4-statement-from-the-national-public-health-emergency-team-on-sunday-2/,
 admitted_icu,17.0,hospital_statistics,2020-03-22,https://www.gov.ie/en/press-release/a01ff4-statement-from-the-national-public-health-emergency-team-on-sunday-2/,

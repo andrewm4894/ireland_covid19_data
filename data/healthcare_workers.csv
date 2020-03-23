@@ -1,4 +1,8 @@
 measure,number,pct,tag,published_date,source
+travel_related,55.0,0.26,healthcare_workers,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
+no_foreign_travel,133.0,0.64,healthcare_workers,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
+under_investigation,20.0,0.1,healthcare_workers,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
+total,208.0,,healthcare_workers,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
 travel_related,42.0,0.26,healthcare_workers,2020-03-22,https://www.gov.ie/en/press-release/a01ff4-statement-from-the-national-public-health-emergency-team-on-sunday-2/
 no_foreign_travel,106.0,0.67,healthcare_workers,2020-03-22,https://www.gov.ie/en/press-release/a01ff4-statement-from-the-national-public-health-emergency-team-on-sunday-2/
 under_investigation,11.0,0.07,healthcare_workers,2020-03-22,https://www.gov.ie/en/press-release/a01ff4-statement-from-the-national-public-health-emergency-team-on-sunday-2/
