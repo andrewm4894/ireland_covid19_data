@@ -213,11 +213,13 @@ df_spread_daily = df_spread.pivot(index='published_date', columns='measure', val
 df_spread_daily.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_spread_daily.columns]
 df_gender_daily = df_gender.pivot(index='published_date', columns='gender', values='number').reset_index()[['published_date', 'male', 'female']]
 df_county_daily = df_county.pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
+df_age_daily = df_age.pivot(index='published_date', columns='age', values='number').reset_index()[['published_date', '65+']]
 df_text_wide = df_text.pivot(index='published_date', columns='variable', values='value').reset_index()
 df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_gender_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_county_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_text_wide, 'outer', on='published_date')
+df_daily_stats = df_daily_stats.merge(df_age_daily, 'outer', on='published_date')
 # add some derived fields
 df_daily_stats['cases_per_cluster'] = df_daily_stats['cases'] / df_daily_stats['clusters_notified']
 df_daily_stats['pct_male'] = df_daily_stats['male'] / (df_daily_stats['male'] + df_daily_stats['female'])
@@ -226,6 +228,7 @@ df_daily_stats['pct_deaths'] = df_daily_stats['deaths'] / df_daily_stats['cases'
 df_daily_stats['pct_community'] = df_daily_stats['community_transmission'] / df_daily_stats['cases']
 df_daily_stats['pct_hospitalised'] = df_daily_stats['hospitalised'] / df_daily_stats['cases']
 df_daily_stats['pct_icu'] = df_daily_stats['admitted_icu'] / df_daily_stats['cases']
+df_daily_stats['pct_65+'] = df_daily_stats['65+'] / df_daily_stats['cases']
 # save to csv
 df_daily_stats.to_csv('data/daily_stats.csv', index=False)
 
