@@ -17,4 +17,4 @@ Blog post [here](https://andrewm4894.com/2020/03/23/ireland-covid19-data/).
 - https://twitter.com/IrishDataViz - some great analysis and insights.
 - http://gov.ie/covid19 - official portal for news from Irish government.
 - https://github.com/datasets/covid-19 - a more international repository of data.
-- https://github.com/CSSEGISandData/COVID-19 - Most popular source by Johns Hopkins     
+- https://github.com/CSSEGISandData/COVID-19 - most popular source by Johns Hopkins     
