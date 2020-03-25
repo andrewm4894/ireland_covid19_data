@@ -196,15 +196,6 @@ for press_release_link in press_release_links:
 
 ##%%
 
-# save as csv to data folder
-df_hospital_statistics.to_csv('data/hospital_statistics.csv', index=False)
-df_gender.to_csv('data/gender.csv', index=False)
-df_age.to_csv('data/age.csv', index=False)
-df_spread.to_csv('data/spread.csv', index=False)
-df_healthcare_workers.to_csv('data/healthcare_workers.csv', index=False)
-df_county.to_csv('data/county.csv', index=False)
-df_text.to_csv('data/text.csv', index=False)
-
 # create a daily stats wide table
 df_daily_stats = df_hospital_statistics.pivot(
     index='published_date', columns='measure', values=['number', 'pct']
@@ -216,9 +207,11 @@ df_gender_daily = df_gender.pivot(index='published_date', columns='gender', valu
 df_county_daily = df_county.pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
 df_age_daily = df_age.pivot(index='published_date', columns='age', values='number').reset_index()[['published_date', '65+']]
 df_text_wide = df_text.pivot(index='published_date', columns='variable', values='value').reset_index()
+df_text_wide['txt_growth_rate'] = df_text_wide['txt_new_cases'] / (df_text_wide['txt_cases'] - df_text_wide['txt_new_cases'])
 df_tmp = df_healthcare_workers[['published_date', 'measure', 'number']].copy()
 df_tmp['measure'] = 'health_worker_' + df_tmp['measure']
 df_healthcare_workers_daily = df_tmp.pivot(index='published_date', columns='measure', values='number').reset_index()
+
 # join other daily or wide tables
 df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_gender_daily, 'outer', on='published_date')
@@ -226,7 +219,8 @@ df_daily_stats = df_daily_stats.merge(df_county_daily, 'outer', on='published_da
 df_daily_stats = df_daily_stats.merge(df_text_wide, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_age_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_healthcare_workers_daily, 'outer', on='published_date')
-# add some derived fields
+
+# add some more derived fields
 df_daily_stats['cases_per_cluster'] = df_daily_stats['cases'] / df_daily_stats['clusters_notified']
 df_daily_stats['pct_male'] = df_daily_stats['male'] / (df_daily_stats['male'] + df_daily_stats['female'])
 df_daily_stats['pct_dublin'] = df_daily_stats['dublin'].astype(float) / df_daily_stats['cases']
@@ -240,11 +234,21 @@ df_daily_stats['pct_65+'] = df_daily_stats['65+'] / df_daily_stats['cases']
 df_daily_stats['pct_test_positive'] = df_daily_stats['cases'] / df_daily_stats['txt_tests']
 df_daily_stats['hospitalised_icu_rate'] = df_daily_stats['admitted_icu'] / df_daily_stats['hospitalised']
 df_daily_stats['pct_health_workers'] = df_daily_stats['health_worker_total'] / df_daily_stats['cases']
+
 # drop na cols
 df_daily_stats = df_daily_stats.dropna(how='all', axis=1)
+
 # make a long version of daily stats
 df_daily_stats_long = df_daily_stats.melt(id_vars='published_date')
-# save to csv
+
+# save as csv to data folder
+df_hospital_statistics.to_csv('data/hospital_statistics.csv', index=False)
+df_gender.to_csv('data/gender.csv', index=False)
+df_age.to_csv('data/age.csv', index=False)
+df_spread.to_csv('data/spread.csv', index=False)
+df_healthcare_workers.to_csv('data/healthcare_workers.csv', index=False)
+df_county.to_csv('data/county.csv', index=False)
+df_text.to_csv('data/text.csv', index=False)
 df_daily_stats.to_csv('data/daily_stats.csv', index=False)
 df_daily_stats_long.to_csv('data/daily_stats_long.csv', index=False)
 
