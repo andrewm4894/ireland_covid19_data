@@ -1,4 +1,8 @@
 measure,pct,tag,published_date,source,number
+community_transmission,0.29,spread,2020-03-25,https://www.gov.ie/en/press-release/45aa11-statement-from-the-national-public-health-emergency-team-wednesday-2/,
+contact_confirmed_case,0.15,spread,2020-03-25,https://www.gov.ie/en/press-release/45aa11-statement-from-the-national-public-health-emergency-team-wednesday-2/,
+travel_abroad,0.18,spread,2020-03-25,https://www.gov.ie/en/press-release/45aa11-statement-from-the-national-public-health-emergency-team-wednesday-2/,
+under_investigation,0.38,spread,2020-03-25,https://www.gov.ie/en/press-release/45aa11-statement-from-the-national-public-health-emergency-team-wednesday-2/,
 community_transmission,0.45,spread,2020-03-24,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/,
 contact_confirmed_case,0.24,spread,2020-03-24,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/,
 travel_abroad,0.31,spread,2020-03-24,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/,
