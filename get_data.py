@@ -77,11 +77,12 @@ for press_release_link in press_release_links:
         ('There are now (.*) confirmed cases of COVID-19 in Ireland', 'txt_cases'),
         ('There have now been (.*) COVID-19 related deaths in Ireland', 'txt_deaths'),
         ('informed of (.*) new confirmed cases', 'txt_new_cases'),
+        ('To date, (.*) tests have been carried out', 'txt_tests'),
     ]
     for pattern, name in patterns:
         text = re.search(pattern, data, re.IGNORECASE)
         if text:
-            value = float(text.group(1).replace(',', '').replace('seven', '7').replace('five', '5').replace('four', '4').replace('two', '2').replace('one', '1'))
+            value = float(text.group(1).lower().replace(',', '').replace('ten', '10').replace('nine', '9').replace('eight', '8').replace('seven', '7').replace('five', '5').replace('four', '4').replace('two', '2').replace('one', '1'))
             df_tmp = pd.DataFrame([[published_date, name, value, press_release_link]],
                                   columns=['published_date', 'variable', 'value', 'source'])
             df_text = df_text.append(df_tmp)
@@ -215,24 +216,38 @@ df_gender_daily = df_gender.pivot(index='published_date', columns='gender', valu
 df_county_daily = df_county.pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
 df_age_daily = df_age.pivot(index='published_date', columns='age', values='number').reset_index()[['published_date', '65+']]
 df_text_wide = df_text.pivot(index='published_date', columns='variable', values='value').reset_index()
+df_tmp = df_healthcare_workers[['published_date', 'measure', 'number']].copy()
+df_tmp['measure'] = 'health_worker_' + df_tmp['measure']
+df_healthcare_workers_daily = df_tmp.pivot(index='published_date', columns='measure', values='number').reset_index()
+# join other daily or wide tables
 df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_gender_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_county_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_text_wide, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_age_daily, 'outer', on='published_date')
+df_daily_stats = df_daily_stats.merge(df_healthcare_workers_daily, 'outer', on='published_date')
 # add some derived fields
 df_daily_stats['cases_per_cluster'] = df_daily_stats['cases'] / df_daily_stats['clusters_notified']
 df_daily_stats['pct_male'] = df_daily_stats['male'] / (df_daily_stats['male'] + df_daily_stats['female'])
 df_daily_stats['pct_dublin'] = df_daily_stats['dublin'].astype(float) / df_daily_stats['cases']
 df_daily_stats['pct_deaths'] = df_daily_stats['deaths'] / df_daily_stats['cases']
 df_daily_stats['pct_community'] = df_daily_stats['community_transmission'] / df_daily_stats['cases']
+df_daily_stats['pct_contact_confirmed'] = df_daily_stats['contact_confirmed_case'] / df_daily_stats['cases']
+df_daily_stats['pct_travel_abroad'] = df_daily_stats['travel_abroad'] / df_daily_stats['cases']
 df_daily_stats['pct_hospitalised'] = df_daily_stats['hospitalised'] / df_daily_stats['cases']
 df_daily_stats['pct_icu'] = df_daily_stats['admitted_icu'] / df_daily_stats['cases']
 df_daily_stats['pct_65+'] = df_daily_stats['65+'] / df_daily_stats['cases']
+df_daily_stats['pct_test_positive'] = df_daily_stats['cases'] / df_daily_stats['txt_tests']
+df_daily_stats['hospitalised_icu_rate'] = df_daily_stats['admitted_icu'] / df_daily_stats['hospitalised']
+df_daily_stats['pct_health_workers'] = df_daily_stats['health_worker_total'] / df_daily_stats['cases']
+# drop na cols
+df_daily_stats = df_daily_stats.dropna(how='all', axis=1)
+# make a long version of daily stats
+df_daily_stats_long = df_daily_stats.melt(id_vars='published_date')
 # save to csv
 df_daily_stats.to_csv('data/daily_stats.csv', index=False)
+df_daily_stats_long.to_csv('data/daily_stats_long.csv', index=False)
 
 #%%
-
 
 #%%

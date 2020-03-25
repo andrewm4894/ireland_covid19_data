@@ -1,4 +1,7 @@
 gender,number,pct,tag,published_date,source
+female,431.0,0.45,gender,2020-03-24,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/
+male,534.0,0.55,gender,2020-03-24,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/
+total,965.0,,gender,2020-03-24,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/
 female,369.0,0.44,gender,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
 male,460.0,0.55,gender,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
 unknown,7.0,0.01,gender,2020-03-23,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/

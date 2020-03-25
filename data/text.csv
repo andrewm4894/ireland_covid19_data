@@ -1,4 +1,8 @@
 published_date,variable,value,source
+2020-03-24,txt_cases,1329.0,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/
+2020-03-24,txt_deaths,7.0,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/
+2020-03-24,txt_new_cases,204.0,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/
+2020-03-24,txt_tests,17992.0,https://www.gov.ie/en/press-release/e378fd-statement-from-the-national-public-health-emergency-team-on-tuesday-/
 2020-03-23,txt_cases,1125.0,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
 2020-03-23,txt_deaths,6.0,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
 2020-03-23,txt_new_cases,219.0,https://www.gov.ie/en/press-release/510383-statement-from-the-national-public-health-emergency-team-on-monday-2/
