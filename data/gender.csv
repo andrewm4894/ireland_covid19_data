@@ -1,4 +1,15 @@
 gender,number,pct,tag,published_date,source
+female,1060.0,0.48,gender,2020-03-29,https://www.gov.ie/en/press-release/1ca282-statement-from-the-national-public-health-emergency-team-sunday-28-m/
+male,1140.0,0.51,gender,2020-03-29,https://www.gov.ie/en/press-release/1ca282-statement-from-the-national-public-health-emergency-team-sunday-28-m/
+unknown,16.0,0.01,gender,2020-03-29,https://www.gov.ie/en/press-release/1ca282-statement-from-the-national-public-health-emergency-team-sunday-28-m/
+total,2216.0,,gender,2020-03-29,https://www.gov.ie/en/press-release/1ca282-statement-from-the-national-public-health-emergency-team-sunday-28-m/
+female,888.0,0.47,gender,2020-03-28,https://www.gov.ie/en/press-release/f87602-statement-from-the-national-public-health-emergency-team-saturday-28/
+male,1010.0,0.53,gender,2020-03-28,https://www.gov.ie/en/press-release/f87602-statement-from-the-national-public-health-emergency-team-saturday-28/
+unknown,6.0,0.0,gender,2020-03-28,https://www.gov.ie/en/press-release/f87602-statement-from-the-national-public-health-emergency-team-saturday-28/
+total,1908.0,,gender,2020-03-28,https://www.gov.ie/en/press-release/f87602-statement-from-the-national-public-health-emergency-team-saturday-28/
+female,760.0,0.46,gender,2020-03-27,https://www.gov.ie/en/press-release/176fec-statement-from-the-national-public-health-emergency-team-26-march-20/
+male,879.0,0.54,gender,2020-03-27,https://www.gov.ie/en/press-release/176fec-statement-from-the-national-public-health-emergency-team-26-march-20/
+total,1639.0,,gender,2020-03-27,https://www.gov.ie/en/press-release/176fec-statement-from-the-national-public-health-emergency-team-26-march-20/
 female,630.0,0.46,gender,2020-03-26,https://www.gov.ie/en/press-release/0cbb04-statement-from-the-national-public-health-emergency-team-thursday-26/
 male,753.0,0.54,gender,2020-03-26,https://www.gov.ie/en/press-release/0cbb04-statement-from-the-national-public-health-emergency-team-thursday-26/
 total,1383.0,,gender,2020-03-26,https://www.gov.ie/en/press-release/0cbb04-statement-from-the-national-public-health-emergency-team-thursday-26/

@@ -78,11 +78,12 @@ for press_release_link in press_release_links:
         ('There have now been (.*) COVID-19 related deaths in Ireland', 'txt_deaths'),
         ('informed of (.*) new confirmed cases', 'txt_new_cases'),
         ('To date, (.*) tests have been carried out', 'txt_tests'),
+        ('today been informed that (.*) patients diagnosed with COVID-19 in Ireland have died', 'txt_new_deaths'),
     ]
     for pattern, name in patterns:
         text = re.search(pattern, data, re.IGNORECASE)
         if text:
-            value = float(text.group(1).lower().replace(',', '').replace('ten', '10').replace('nine', '9').replace('eight', '8').replace('seven', '7').replace('five', '5').replace('four', '4').replace('two', '2').replace('one', '1'))
+            value = float(text.group(1).lower().replace(' ', '').replace('anadditional', '').replace(',', '').replace('ten', '10').replace('nine', '9').replace('eight', '8').replace('seven', '7').replace('five', '5').replace('four', '4').replace('three', '3').replace('two', '2').replace('one', '1'))
             df_tmp = pd.DataFrame([[published_date, name, value, press_release_link]],
                                   columns=['published_date', 'variable', 'value', 'source'])
             df_text = df_text.append(df_tmp)
