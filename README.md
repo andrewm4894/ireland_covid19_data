@@ -16,5 +16,6 @@ Blog post [here](https://andrewm4894.com/2020/03/23/ireland-covid19-data/).
 ## Useful Links:
 - https://twitter.com/IrishDataViz - some great analysis and insights.
 - http://gov.ie/covid19 - official portal for news from Irish government.
+- [HPSC "Cases In Ireland" Daily Report](https://www.hpsc.ie/a-z/respiratory/coronavirus/novelcoronavirus/casesinireland/) - Another source of data from HSE.
 - https://github.com/datasets/covid-19 - a more international repository of data.
 - https://github.com/CSSEGISandData/COVID-19 - most popular source by Johns Hopkins     
