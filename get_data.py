@@ -291,6 +291,17 @@ df_daily_stats = df_daily_stats.dropna(how='all', axis=1)
 # make a long version of daily stats
 df_daily_stats_long = df_daily_stats.melt(id_vars='published_date')
 
+# ensure data sorted in csv files
+df_hospital_statistics = df_hospital_statistics.sort_values(by=['published_date'])
+df_gender = df_gender.sort_values(by=['published_date'])
+df_age = df_age.sort_values(by=['published_date'])
+df_spread = df_spread.sort_values(by=['published_date'])
+df_healthcare_workers = df_healthcare_workers.sort_values(by=['published_date'])
+df_county = df_county.sort_values(by=['published_date'])
+df_text = df_text.sort_values(by=['published_date'])
+df_daily_stats = df_daily_stats.sort_values(by=['published_date'])
+df_daily_stats_long = df_daily_stats_long.sort_values(by=['published_date'])
+
 # save as csv to data folder
 df_hospital_statistics.to_csv('data/hospital_statistics.csv', index=False)
 df_gender.to_csv('data/gender.csv', index=False)
