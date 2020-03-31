@@ -126,11 +126,20 @@ for press_release_link in press_release_links:
          'txt_new_deaths_east'),
         ('9 patients were based in the east of the country and (.*) in the south.',
          'txt_new_deaths_south'),
+        #('(.*) deaths located in the east',
+        # 'txt_new_deaths_east'),
+        #(', (.*) in the south',
+        # 'txt_new_deaths_south'),
+        #(', (.*) in the north-west',
+        # 'txt_new_deaths_northwest'),
+        #('and (.*) in the west',
+        # 'txt_new_deaths_west'),
     ]
     rubbish_strings = [
         ' ', 'anadditional', ',', '</li>', '<listyle="margin-left:15px;text-indent:-15px;">', '(', ')',
         'cases-25%of', 'themedianageofpatientsdiagnosedwithcovid-19whohavediedis79years.', 'ofthe712casesnotified',
-        'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all'
+        'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all', '8deathslocatedintheeast',
+        '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand'
     ]
     replacements = [
         ('ten', '10'),
@@ -159,6 +168,7 @@ for press_release_link in press_release_links:
             df_tmp = pd.DataFrame([[published_date, name, value, press_release_link]],
                                   columns=['published_date', 'variable', 'value', 'source'])
             df_text = df_text.append(df_tmp)
+    df_text = df_text.drop_duplicates()
 
     # if tables found then try process them
     if num_tables > 0:
