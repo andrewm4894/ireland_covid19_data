@@ -85,6 +85,8 @@ for press_release_link in press_release_links:
         ('cases (.*) have been hospitalised', 'txt_cases_hospitalised_pct'),
         ('of those hospitalised, (.*) cases have been admitted to ICU', 'txt_cases_admitted_icu'),
         ('(.*) cases are associated with healthcare workers', 'txt_cases_healthcare_workers'),
+        ('(.*) cases \(.*%\) are associated with healthcare workers', 'txt_cases_healthcare_workers'),
+        (' cases \((.*)\) are associated with healthcare workers', 'txt_cases_healthcare_workers_pct'),
         ('.*% are male and (.*) are female', 'txt_female_pct'),
         ('(.*) are male and .*% are female', 'txt_male_pct'),
         ('community transmission accounts for (.*), close contact accounts for .*%, travel abroad accounts for .*%',
@@ -103,11 +105,32 @@ for press_release_link in press_release_links:
          'txt_cases_cork_pct'),
         ('with (.*) clusters involving .* cases', 'txt_clusters'),
         ('with .* clusters involving (.*) cases', 'txt_clusters_cases'),
+        ('(.*) deaths located in the east of the country', 'txt_new_deaths_east'),
+        ('(.*) deaths are located in the east of the country, .* in the northwest of the country and .* in the south',
+         'txt_new_deaths_east'),
+        (' deaths are located in the east of the country, (.*) in the northwest of the country and .* in the south',
+         'txt_new_deaths_northwest'),
+        (' deaths are located in the east of the country, .* in the northwest of the country and (.*) in the south',
+         'txt_new_deaths_south'),
+        ('(.*) deaths located in the east, .* in the south and .* in the west of the country',
+         'txt_new_deaths_east'),
+        (' deaths located in the east, (.*) in the south and .* in the west of the country',
+         'txt_new_deaths_south'),
+        (' deaths located in the east, .* in the south and (.*) in the west of the country',
+         'txt_new_deaths_west'),
+        ('have died. (.*) person in the north-west of the country and two females in the east',
+         'txt_new_deaths_northwest'),
+        ('One person in the north-west of the country and (.*) females in the east',
+         'txt_new_deaths_east'),
+        ('(.*) patients were based in the east of the country and 1 in the south.',
+         'txt_new_deaths_east'),
+        ('9 patients were based in the east of the country and (.*) in the south.',
+         'txt_new_deaths_south'),
     ]
     rubbish_strings = [
         ' ', 'anadditional', ',', '</li>', '<listyle="margin-left:15px;text-indent:-15px;">', '(', ')',
         'cases-25%of', 'themedianageofpatientsdiagnosedwithcovid-19whohavediedis79years.', 'ofthe712casesnotified',
-        'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified'
+        'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all'
     ]
     replacements = [
         ('ten', '10'),
