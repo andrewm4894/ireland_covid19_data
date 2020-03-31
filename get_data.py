@@ -279,8 +279,8 @@ df_spread_daily.columns = ['_'.join(col).replace('number_', '').replace('publish
 df_gender_daily = df_gender.pivot(index='published_date', columns='gender', values='number').reset_index()[['published_date', 'male', 'female']]
 df_county_daily = df_county.pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
 df_age_daily = df_age.pivot(index='published_date', columns='age', values='number').reset_index()[['published_date', '65+']]
-df_text_wide = df_text.pivot(index='published_date', columns='variable', values='value').reset_index()
-df_text_wide['txt_growth_rate'] = df_text_wide['txt_new_cases'] / (df_text_wide['txt_cases'] - df_text_wide['txt_new_cases'])
+df_text_daily = df_text.pivot(index='published_date', columns='variable', values='value').reset_index()
+df_text_daily['txt_growth_rate'] = df_text_daily['txt_new_cases'] / (df_text_daily['txt_cases'] - df_text_daily['txt_new_cases'])
 df_tmp = df_healthcare_workers[['published_date', 'measure', 'number']].copy()
 df_tmp['measure'] = 'health_worker_' + df_tmp['measure']
 df_healthcare_workers_daily = df_tmp.pivot(index='published_date', columns='measure', values='number').reset_index()
@@ -289,7 +289,7 @@ df_healthcare_workers_daily = df_tmp.pivot(index='published_date', columns='meas
 df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_gender_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_county_daily, 'outer', on='published_date')
-df_daily_stats = df_daily_stats.merge(df_text_wide, 'outer', on='published_date')
+df_daily_stats = df_daily_stats.merge(df_text_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_age_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_healthcare_workers_daily, 'outer', on='published_date')
 
@@ -327,7 +327,7 @@ df_healthcare_workers_daily = df_healthcare_workers_daily.sort_values(by=['publi
 df_county = df_county.sort_values(by=['published_date'])
 df_county_daily = df_county_daily.sort_values(by=['published_date'])
 df_text = df_text.sort_values(by=['published_date'])
-df_text_wide = df_text_wide.sort_values(by=['published_date'])
+df_text_daily = df_text_daily.sort_values(by=['published_date'])
 df_daily_stats = df_daily_stats.sort_values(by=['published_date'])
 df_daily_stats_long = df_daily_stats_long.sort_values(by=['published_date'])
 
@@ -344,7 +344,7 @@ df_healthcare_workers_daily.to_csv('data/healthcare_workers_daily.csv', index=Fa
 df_county.to_csv('data/county.csv', index=False)
 df_county_daily.to_csv('data/county_daily.csv', index=False)
 df_text.to_csv('data/text.csv', index=False)
-df_text_wide.to_csv('data/text_wide.csv', index=False)
+df_text_daily.to_csv('data/text_daily.csv', index=False)
 df_daily_stats.to_csv('data/daily_stats.csv', index=False)
 df_daily_stats_long.to_csv('data/daily_stats_long.csv', index=False)
 
