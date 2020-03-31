@@ -82,11 +82,34 @@ for press_release_link in press_release_links:
         ('median age of today’s reported deaths is (.*)', 'txt_new_deaths_median_age'),
         ('the median age of confirmed cases is (.*) years', 'txt_cases_median_age'),
         ('(.*) cases .* have been hospitalised', 'txt_cases_hospitalised'),
+        ('cases (.*) have been hospitalised', 'txt_cases_hospitalised_pct'),
+        ('of those hospitalised, (.*) cases have been admitted to ICU', 'txt_cases_admitted_icu'),
+        ('(.*) cases are associated with healthcare workers', 'txt_cases_healthcare_workers'),
+        ('.*% are male and (.*) are female', 'txt_female_pct'),
+        ('(.*) are male and .*% are female', 'txt_male_pct'),
+        ('community transmission accounts for (.*), close contact accounts for .*%, travel abroad accounts for .*%',
+         'txt_community_transmission_pct'),
+        ('community transmission accounts for .*%, close contact accounts for (.*), travel abroad accounts for .*%',
+         'txt_close_contact_pct'),
+        ('community transmission accounts for .*%, close contact accounts for .*%, travel abroad accounts for (.*)',
+         'txt_travel_abroad_pct'),
+        ('Dublin has the highest number of cases at (.*) \(.* followed by Cork with .* cases .*%',
+         'txt_cases_dublin'),
+        ('Dublin has the highest number of cases at .* \((.*) of all cases\) followed by Cork with .* cases .*%',
+         'txt_cases_dublin_pct'),
+        ('Dublin has the highest number of cases at .* followed by Cork with (.*) cases .*%',
+         'txt_cases_cork'),
+        ('Dublin has the highest number of cases at .* followed by Cork with .* cases (.*)',
+         'txt_cases_cork_pct'),
+        ('with (.*) clusters involving .* cases', 'txt_clusters'),
+        ('with .* clusters involving (.*) cases', 'txt_clusters_cases'),
+    ]
+    rubbish_strings = [
+        ' ', 'anadditional', ',', '</li>', '<listyle="margin-left:15px;text-indent:-15px;">', '(', ')',
+        'cases-25%of', 'themedianageofpatientsdiagnosedwithcovid-19whohavediedis79years.', 'ofthe712casesnotified',
+        'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified'
     ]
     replacements = [
-        (' ', ''),
-        ('anadditional', ''),
-        (',', ''),
         ('ten', '10'),
         ('nine', '9'),
         ('eight', '8'),
@@ -104,6 +127,12 @@ for press_release_link in press_release_links:
             value = text.group(1).lower()
             for to_replace, replace_with in replacements:
                 value = value.replace(to_replace, replace_with)
+            for rubbish_string in rubbish_strings:
+                value = value.replace(rubbish_string, '')
+            if '%' in value:
+                value = float(value.replace('%', '')) / 100
+            else:
+                value = float(value.replace('%', ''))
             df_tmp = pd.DataFrame([[published_date, name, value, press_release_link]],
                                   columns=['published_date', 'variable', 'value', 'source'])
             df_text = df_text.append(df_tmp)
