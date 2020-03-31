@@ -1,4 +1,8 @@
 published_date,variable,value,source
+2020-03-30,txt_cases,2910.0,https://www.gov.ie/en/press-release/d0cf73-statement-from-the-national-public-health-emergency-team-monday-30-m/
+2020-03-30,txt_deaths,54.0,https://www.gov.ie/en/press-release/d0cf73-statement-from-the-national-public-health-emergency-team-monday-30-m/
+2020-03-30,txt_new_cases,295.0,https://www.gov.ie/en/press-release/d0cf73-statement-from-the-national-public-health-emergency-team-monday-30-m/
+2020-03-30,txt_new_deaths,8.0,https://www.gov.ie/en/press-release/d0cf73-statement-from-the-national-public-health-emergency-team-monday-30-m/
 2020-03-29,txt_cases,2615.0,https://www.gov.ie/en/press-release/1ca282-statement-from-the-national-public-health-emergency-team-sunday-28-m/
 2020-03-29,txt_deaths,46.0,https://www.gov.ie/en/press-release/1ca282-statement-from-the-national-public-health-emergency-team-sunday-28-m/
 2020-03-29,txt_new_cases,200.0,https://www.gov.ie/en/press-release/1ca282-statement-from-the-national-public-health-emergency-team-sunday-28-m/

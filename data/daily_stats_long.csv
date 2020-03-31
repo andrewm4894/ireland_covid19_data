@@ -10,6 +10,7 @@ published_date,variable,value
 2020-03-27,admitted_icu,59.0
 2020-03-28,admitted_icu,67.0
 2020-03-29,admitted_icu,77.0
+2020-03-30,admitted_icu,84.0
 2020-03-18,admitted_icu,
 2020-03-04,admitted_icu,
 2020-03-05,admitted_icu,
@@ -36,6 +37,7 @@ published_date,variable,value
 2020-03-27,case_fatality_rate,1.3
 2020-03-28,case_fatality_rate,1.7
 2020-03-29,case_fatality_rate,
+2020-03-30,case_fatality_rate,
 2020-03-18,case_fatality_rate,
 2020-03-04,case_fatality_rate,
 2020-03-05,case_fatality_rate,
@@ -62,6 +64,7 @@ published_date,variable,value
 2020-03-27,cases,1639.0
 2020-03-28,cases,1904.0
 2020-03-29,cases,2216.0
+2020-03-30,cases,2475.0
 2020-03-18,cases,
 2020-03-04,cases,
 2020-03-05,cases,
@@ -88,6 +91,7 @@ published_date,variable,value
 2020-03-27,clusters_notified,79.0
 2020-03-28,clusters_notified,91.0
 2020-03-29,clusters_notified,103.0
+2020-03-30,clusters_notified,111.0
 2020-03-18,clusters_notified,
 2020-03-04,clusters_notified,
 2020-03-05,clusters_notified,
@@ -114,6 +118,7 @@ published_date,variable,value
 2020-03-27,deaths,
 2020-03-28,deaths,33.0
 2020-03-29,deaths,43.0
+2020-03-30,deaths,44.0
 2020-03-18,deaths,
 2020-03-04,deaths,
 2020-03-05,deaths,
@@ -140,6 +145,7 @@ published_date,variable,value
 2020-03-27,healthcare_workers,375.0
 2020-03-28,healthcare_workers,445.0
 2020-03-29,healthcare_workers,506.0
+2020-03-30,healthcare_workers,578.0
 2020-03-18,healthcare_workers,
 2020-03-04,healthcare_workers,
 2020-03-05,healthcare_workers,
@@ -166,6 +172,7 @@ published_date,variable,value
 2020-03-27,hospitalised,419.0
 2020-03-28,hospitalised,489.0
 2020-03-29,hospitalised,564.0
+2020-03-30,hospitalised,645.0
 2020-03-18,hospitalised,
 2020-03-04,hospitalised,
 2020-03-05,hospitalised,
@@ -192,6 +199,7 @@ published_date,variable,value
 2020-03-27,median_age,46.0
 2020-03-28,median_age,46.0
 2020-03-29,median_age,47.0
+2020-03-30,median_age,47.0
 2020-03-18,median_age,
 2020-03-04,median_age,
 2020-03-05,median_age,
@@ -218,6 +226,7 @@ published_date,variable,value
 2020-03-27,pct_admitted_icu,
 2020-03-28,pct_admitted_icu,
 2020-03-29,pct_admitted_icu,
+2020-03-30,pct_admitted_icu,
 2020-03-18,pct_admitted_icu,
 2020-03-04,pct_admitted_icu,
 2020-03-05,pct_admitted_icu,
@@ -244,6 +253,7 @@ published_date,variable,value
 2020-03-27,pct_case_fatality_rate,
 2020-03-28,pct_case_fatality_rate,
 2020-03-29,pct_case_fatality_rate,
+2020-03-30,pct_case_fatality_rate,
 2020-03-18,pct_case_fatality_rate,
 2020-03-04,pct_case_fatality_rate,
 2020-03-05,pct_case_fatality_rate,
@@ -270,6 +280,7 @@ published_date,variable,value
 2020-03-27,pct_clusters_notified,
 2020-03-28,pct_clusters_notified,
 2020-03-29,pct_clusters_notified,
+2020-03-30,pct_clusters_notified,
 2020-03-18,pct_clusters_notified,
 2020-03-04,pct_clusters_notified,
 2020-03-05,pct_clusters_notified,
@@ -296,6 +307,7 @@ published_date,variable,value
 2020-03-27,pct_deaths,
 2020-03-28,pct_deaths,0.017331932773109245
 2020-03-29,pct_deaths,0.0194043321299639
+2020-03-30,pct_deaths,0.017777777777777778
 2020-03-18,pct_deaths,
 2020-03-04,pct_deaths,
 2020-03-05,pct_deaths,
@@ -322,6 +334,7 @@ published_date,variable,value
 2020-03-27,pct_healthcare_workers,
 2020-03-28,pct_healthcare_workers,
 2020-03-29,pct_healthcare_workers,
+2020-03-30,pct_healthcare_workers,
 2020-03-18,pct_healthcare_workers,
 2020-03-04,pct_healthcare_workers,
 2020-03-05,pct_healthcare_workers,
@@ -348,6 +361,7 @@ published_date,variable,value
 2020-03-27,pct_hospitalised,0.2556436851738865
 2020-03-28,pct_hospitalised,0.25682773109243695
 2020-03-29,pct_hospitalised,0.2545126353790614
+2020-03-30,pct_hospitalised,0.2606060606060606
 2020-03-18,pct_hospitalised,
 2020-03-04,pct_hospitalised,
 2020-03-05,pct_hospitalised,
@@ -374,6 +388,7 @@ published_date,variable,value
 2020-03-27,community_transmission,
 2020-03-28,community_transmission,
 2020-03-29,community_transmission,
+2020-03-30,community_transmission,
 2020-03-18,community_transmission,60.0
 2020-03-04,community_transmission,
 2020-03-05,community_transmission,
@@ -400,6 +415,7 @@ published_date,variable,value
 2020-03-27,contact_confirmed_case,
 2020-03-28,contact_confirmed_case,
 2020-03-29,contact_confirmed_case,
+2020-03-30,contact_confirmed_case,
 2020-03-18,contact_confirmed_case,45.0
 2020-03-04,contact_confirmed_case,
 2020-03-05,contact_confirmed_case,
@@ -426,6 +442,7 @@ published_date,variable,value
 2020-03-27,travel_abroad,
 2020-03-28,travel_abroad,
 2020-03-29,travel_abroad,
+2020-03-30,travel_abroad,
 2020-03-18,travel_abroad,113.0
 2020-03-04,travel_abroad,
 2020-03-05,travel_abroad,
@@ -452,6 +469,7 @@ published_date,variable,value
 2020-03-27,under_investigation,
 2020-03-28,under_investigation,
 2020-03-29,under_investigation,
+2020-03-30,under_investigation,
 2020-03-18,under_investigation,53.0
 2020-03-04,under_investigation,
 2020-03-05,under_investigation,
@@ -478,6 +496,7 @@ published_date,variable,value
 2020-03-27,pct_community_transmission,0.28
 2020-03-28,pct_community_transmission,0.25
 2020-03-29,pct_community_transmission,0.51
+2020-03-30,pct_community_transmission,0.5
 2020-03-18,pct_community_transmission,0.22
 2020-03-04,pct_community_transmission,
 2020-03-05,pct_community_transmission,
@@ -504,6 +523,7 @@ published_date,variable,value
 2020-03-27,pct_contact_confirmed_case,0.12
 2020-03-28,pct_contact_confirmed_case,0.12
 2020-03-29,pct_contact_confirmed_case,0.25
+2020-03-30,pct_contact_confirmed_case,0.27
 2020-03-18,pct_contact_confirmed_case,0.17
 2020-03-04,pct_contact_confirmed_case,
 2020-03-05,pct_contact_confirmed_case,
@@ -530,6 +550,7 @@ published_date,variable,value
 2020-03-27,pct_travel_abroad,
 2020-03-28,pct_travel_abroad,
 2020-03-29,pct_travel_abroad,
+2020-03-30,pct_travel_abroad,
 2020-03-18,pct_travel_abroad,
 2020-03-04,pct_travel_abroad,
 2020-03-05,pct_travel_abroad,
@@ -556,6 +577,7 @@ published_date,variable,value
 2020-03-27,pct_under_investigation,0.55
 2020-03-28,pct_under_investigation,0.55
 2020-03-29,pct_under_investigation,
+2020-03-30,pct_under_investigation,
 2020-03-18,pct_under_investigation,0.2
 2020-03-04,pct_under_investigation,
 2020-03-05,pct_under_investigation,
@@ -582,6 +604,7 @@ published_date,variable,value
 2020-03-27,male,879.0
 2020-03-28,male,1010.0
 2020-03-29,male,1140.0
+2020-03-30,male,1240.0
 2020-03-18,male,
 2020-03-04,male,
 2020-03-05,male,
@@ -608,6 +631,7 @@ published_date,variable,value
 2020-03-27,female,760.0
 2020-03-28,female,888.0
 2020-03-29,female,1060.0
+2020-03-30,female,1206.0
 2020-03-18,female,
 2020-03-04,female,
 2020-03-05,female,
@@ -634,6 +658,7 @@ published_date,variable,value
 2020-03-27,dublin,922
 2020-03-28,dublin,1070
 2020-03-29,dublin,1233
+2020-03-30,dublin,1393
 2020-03-18,dublin,129
 2020-03-04,dublin,
 2020-03-05,dublin,
@@ -660,6 +685,7 @@ published_date,variable,value
 2020-03-27,cork,171
 2020-03-28,cork,184
 2020-03-29,cork,208
+2020-03-30,cork,217
 2020-03-18,cork,48
 2020-03-04,cork,
 2020-03-05,cork,
@@ -686,6 +712,7 @@ published_date,variable,value
 2020-03-27,txt_cases,2121.0
 2020-03-28,txt_cases,2415.0
 2020-03-29,txt_cases,2615.0
+2020-03-30,txt_cases,2910.0
 2020-03-18,txt_cases,366.0
 2020-03-04,txt_cases,
 2020-03-05,txt_cases,13.0
@@ -712,6 +739,7 @@ published_date,variable,value
 2020-03-27,txt_deaths,22.0
 2020-03-28,txt_deaths,36.0
 2020-03-29,txt_deaths,46.0
+2020-03-30,txt_deaths,54.0
 2020-03-18,txt_deaths,
 2020-03-04,txt_deaths,
 2020-03-05,txt_deaths,
@@ -738,6 +766,7 @@ published_date,variable,value
 2020-03-27,txt_new_cases,302.0
 2020-03-28,txt_new_cases,294.0
 2020-03-29,txt_new_cases,200.0
+2020-03-30,txt_new_cases,295.0
 2020-03-18,txt_new_cases,74.0
 2020-03-04,txt_new_cases,4.0
 2020-03-05,txt_new_cases,7.0
@@ -764,6 +793,7 @@ published_date,variable,value
 2020-03-27,txt_new_deaths,3.0
 2020-03-28,txt_new_deaths,14.0
 2020-03-29,txt_new_deaths,10.0
+2020-03-30,txt_new_deaths,8.0
 2020-03-18,txt_new_deaths,
 2020-03-04,txt_new_deaths,
 2020-03-05,txt_new_deaths,
@@ -790,6 +820,7 @@ published_date,variable,value
 2020-03-27,txt_tests,
 2020-03-28,txt_tests,
 2020-03-29,txt_tests,
+2020-03-30,txt_tests,
 2020-03-18,txt_tests,
 2020-03-04,txt_tests,
 2020-03-05,txt_tests,
@@ -816,6 +847,7 @@ published_date,variable,value
 2020-03-27,txt_growth_rate,0.16602528862012095
 2020-03-28,txt_growth_rate,0.13861386138613863
 2020-03-29,txt_growth_rate,0.08281573498964803
+2020-03-30,txt_growth_rate,0.11281070745697896
 2020-03-18,txt_growth_rate,0.2534246575342466
 2020-03-04,txt_growth_rate,
 2020-03-05,txt_growth_rate,1.1666666666666667
@@ -842,6 +874,7 @@ published_date,variable,value
 2020-03-27,65+,307.0
 2020-03-28,65+,373.0
 2020-03-29,65+,441.0
+2020-03-30,65+,511.0
 2020-03-18,65+,42.0
 2020-03-04,65+,
 2020-03-05,65+,
@@ -868,6 +901,7 @@ published_date,variable,value
 2020-03-27,health_worker_no_foreign_travel,229.0
 2020-03-28,health_worker_no_foreign_travel,268.0
 2020-03-29,health_worker_no_foreign_travel,
+2020-03-30,health_worker_no_foreign_travel,
 2020-03-18,health_worker_no_foreign_travel,36.0
 2020-03-04,health_worker_no_foreign_travel,
 2020-03-05,health_worker_no_foreign_travel,
@@ -894,6 +928,7 @@ published_date,variable,value
 2020-03-27,health_worker_total,375.0
 2020-03-28,health_worker_total,445.0
 2020-03-29,health_worker_total,
+2020-03-30,health_worker_total,
 2020-03-18,health_worker_total,59.0
 2020-03-04,health_worker_total,
 2020-03-05,health_worker_total,
@@ -920,6 +955,7 @@ published_date,variable,value
 2020-03-27,health_worker_travel_related,77.0
 2020-03-28,health_worker_travel_related,85.0
 2020-03-29,health_worker_travel_related,
+2020-03-30,health_worker_travel_related,
 2020-03-18,health_worker_travel_related,22.0
 2020-03-04,health_worker_travel_related,
 2020-03-05,health_worker_travel_related,
@@ -946,6 +982,7 @@ published_date,variable,value
 2020-03-27,health_worker_under_investigation,69.0
 2020-03-28,health_worker_under_investigation,92.0
 2020-03-29,health_worker_under_investigation,
+2020-03-30,health_worker_under_investigation,
 2020-03-18,health_worker_under_investigation,1.0
 2020-03-04,health_worker_under_investigation,
 2020-03-05,health_worker_under_investigation,
@@ -972,6 +1009,7 @@ published_date,variable,value
 2020-03-27,cases_per_cluster,20.746835443037973
 2020-03-28,cases_per_cluster,20.923076923076923
 2020-03-29,cases_per_cluster,21.514563106796118
+2020-03-30,cases_per_cluster,22.2972972972973
 2020-03-18,cases_per_cluster,
 2020-03-04,cases_per_cluster,
 2020-03-05,cases_per_cluster,
@@ -998,6 +1036,7 @@ published_date,variable,value
 2020-03-27,pct_male,0.5363026235509457
 2020-03-28,pct_male,0.5321390937829295
 2020-03-29,pct_male,0.5181818181818182
+2020-03-30,pct_male,0.5069501226492232
 2020-03-18,pct_male,
 2020-03-04,pct_male,
 2020-03-05,pct_male,
@@ -1024,6 +1063,7 @@ published_date,variable,value
 2020-03-27,pct_dublin,0.5625381330079317
 2020-03-28,pct_dublin,0.5619747899159664
 2020-03-29,pct_dublin,0.5564079422382672
+2020-03-30,pct_dublin,0.5628282828282828
 2020-03-18,pct_dublin,
 2020-03-04,pct_dublin,
 2020-03-05,pct_dublin,
@@ -1050,6 +1090,7 @@ published_date,variable,value
 2020-03-27,pct_community,
 2020-03-28,pct_community,
 2020-03-29,pct_community,
+2020-03-30,pct_community,
 2020-03-18,pct_community,
 2020-03-04,pct_community,
 2020-03-05,pct_community,
@@ -1076,6 +1117,7 @@ published_date,variable,value
 2020-03-27,pct_contact_confirmed,
 2020-03-28,pct_contact_confirmed,
 2020-03-29,pct_contact_confirmed,
+2020-03-30,pct_contact_confirmed,
 2020-03-18,pct_contact_confirmed,
 2020-03-04,pct_contact_confirmed,
 2020-03-05,pct_contact_confirmed,
@@ -1102,6 +1144,7 @@ published_date,variable,value
 2020-03-27,pct_icu,0.03599755948749237
 2020-03-28,pct_icu,0.0351890756302521
 2020-03-29,pct_icu,0.034747292418772564
+2020-03-30,pct_icu,0.03393939393939394
 2020-03-18,pct_icu,
 2020-03-04,pct_icu,
 2020-03-05,pct_icu,
@@ -1128,6 +1171,7 @@ published_date,variable,value
 2020-03-27,pct_65+,0.18730933496034166
 2020-03-28,pct_65+,0.1959033613445378
 2020-03-29,pct_65+,0.1990072202166065
+2020-03-30,pct_65+,0.20646464646464646
 2020-03-18,pct_65+,
 2020-03-04,pct_65+,
 2020-03-05,pct_65+,
@@ -1154,6 +1198,7 @@ published_date,variable,value
 2020-03-27,pct_test_positive,
 2020-03-28,pct_test_positive,
 2020-03-29,pct_test_positive,
+2020-03-30,pct_test_positive,
 2020-03-18,pct_test_positive,
 2020-03-04,pct_test_positive,
 2020-03-05,pct_test_positive,
@@ -1180,6 +1225,7 @@ published_date,variable,value
 2020-03-27,hospitalised_icu_rate,0.14081145584725538
 2020-03-28,hospitalised_icu_rate,0.13701431492842536
 2020-03-29,hospitalised_icu_rate,0.13652482269503546
+2020-03-30,hospitalised_icu_rate,0.13023255813953488
 2020-03-18,hospitalised_icu_rate,
 2020-03-04,hospitalised_icu_rate,
 2020-03-05,hospitalised_icu_rate,
@@ -1206,6 +1252,7 @@ published_date,variable,value
 2020-03-27,pct_health_workers,0.2287980475899939
 2020-03-28,pct_health_workers,0.23371848739495799
 2020-03-29,pct_health_workers,
+2020-03-30,pct_health_workers,
 2020-03-18,pct_health_workers,
 2020-03-04,pct_health_workers,
 2020-03-05,pct_health_workers,
