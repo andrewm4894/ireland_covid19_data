@@ -32,7 +32,8 @@ def get_press_release_links(
 ##%%
 
 # get all press releases
-press_release_links = get_press_release_links()
+press_release_links = get_press_release_links(page_url='/en/publication/ce3fe8-previous-updates-on-covid-19-coronavirus/')
+press_release_links.extend(get_press_release_links(page_url='/en/news/7e0924-latest-updates-on-covid-19-coronavirus/'))
 print(press_release_links)
 
 ##%%
@@ -80,7 +81,7 @@ for press_release_link in press_release_links:
         ('To date, (.*) tests have been carried out', 'txt_tests'),
         ('today been informed that (.*) patients diagnosed with COVID-19 in Ireland have died', 'txt_new_deaths'),
         ('median age of today’s reported deaths is (.*)', 'txt_new_deaths_median_age'),
-        ('the median age of confirmed cases is (.*) years', 'txt_cases_median_age'),
+        ('median age of confirmed cases is (.*) years', 'txt_cases_median_age'),
         ('(.*) cases .* have been hospitalised', 'txt_cases_hospitalised'),
         ('cases (.*) have been hospitalised', 'txt_cases_hospitalised_pct'),
         ('of those hospitalised, (.*) cases have been admitted to ICU', 'txt_cases_admitted_icu'),
@@ -126,10 +127,16 @@ for press_release_link in press_release_links:
          'txt_new_deaths_east'),
         ('9 patients were based in the east of the country and (.*) in the south.',
          'txt_new_deaths_south'),
-        #('(.*) deaths located in the east',
-        # 'txt_new_deaths_east'),
-        #(', (.*) in the south',
-        # 'txt_new_deaths_south'),
+        ('(.*) deaths located in the east',
+         'txt_new_deaths_east'),
+        ('in the east, (.*) in the south',
+         'txt_new_deaths_south'),
+        ('(.*) patients were reported as having underlying health conditions',
+         'txt_new_deaths_underlying'),
+        ('patients included (.*) females and .* males',
+         'txt_new_deaths_females'),
+        ('patients included .* females and (.*) males',
+         'txt_new_deaths_males'),
         #(', (.*) in the north-west',
         # 'txt_new_deaths_northwest'),
         #('and (.*) in the west',
