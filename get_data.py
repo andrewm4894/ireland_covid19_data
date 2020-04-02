@@ -137,8 +137,8 @@ for press_release_link in press_release_links:
          'txt_new_deaths_females'),
         ('patients included .* females and (.*) males',
          'txt_new_deaths_males'),
-        #(', (.*) in the north-west',
-        # 'txt_new_deaths_northwest'),
+        ('The median age of deaths in Ireland is (.*).',
+         'txt_deaths_median_age'),
         #('and (.*) in the west',
         # 'txt_new_deaths_west'),
     ]
