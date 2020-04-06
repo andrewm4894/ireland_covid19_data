@@ -32,8 +32,8 @@ def get_press_release_links(
 ##%%
 
 # get all press releases
-press_release_links = get_press_release_links(page_url='/en/publication/ce3fe8-previous-updates-on-covid-19-coronavirus/')
-press_release_links.extend(get_press_release_links(page_url='/en/news/7e0924-latest-updates-on-covid-19-coronavirus/'))
+press_release_links = get_press_release_links(page_url='/en/news/7e0924-latest-updates-on-covid-19-coronavirus/')
+press_release_links.extend(get_press_release_links(page_url='/en/publication/ce3fe8-previous-updates-on-covid-19-coronavirus/'))
 print(press_release_links)
 
 ##%%
@@ -146,7 +146,8 @@ for press_release_link in press_release_links:
         ' ', 'anadditional', ',', '</li>', '<listyle="margin-left:15px;text-indent:-15px;">', '(', ')',
         'cases-25%of', 'themedianageofpatientsdiagnosedwithcovid-19whohavediedis79years.', 'ofthe712casesnotified',
         'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all', '8deathslocatedintheeast',
-        '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand'
+        '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand',
+        '.ofthe174deaths114weremaleand60wer', 'efemale'
     ]
     replacements = [
         ('ten', '10'),
