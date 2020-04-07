@@ -311,6 +311,13 @@ df_daily_stats = df_daily_stats.merge(df_text_daily, 'outer', on='published_date
 df_daily_stats = df_daily_stats.merge(df_age_daily, 'outer', on='published_date')
 df_daily_stats = df_daily_stats.merge(df_healthcare_workers_daily, 'outer', on='published_date')
 
+# ensure valid types
+cols_todo = [
+    'admitted_icu', 'cases', 'clusters_notified', 'deaths', 'healthcare_workers', 'hospitalised','dublin', 'cork'
+]
+for col in cols_todo:
+    df_daily_stats[col] = df_daily_stats[col].astype(float)
+
 # add some more derived fields
 df_daily_stats['cases_per_cluster'] = df_daily_stats['cases'] / df_daily_stats['clusters_notified']
 df_daily_stats['pct_male'] = df_daily_stats['male'] / (df_daily_stats['male'] + df_daily_stats['female'])
@@ -325,6 +332,21 @@ df_daily_stats['pct_65+'] = df_daily_stats['65+'] / df_daily_stats['cases']
 df_daily_stats['pct_test_positive'] = df_daily_stats['cases'] / df_daily_stats['txt_tests']
 df_daily_stats['hospitalised_icu_rate'] = df_daily_stats['admitted_icu'] / df_daily_stats['hospitalised']
 df_daily_stats['pct_health_workers'] = df_daily_stats['health_worker_total'] / df_daily_stats['cases']
+df_daily_stats['txt_cases_not_dublincork'] = df_daily_stats['txt_cases'] - (df_daily_stats['txt_cases_dublin'] + df_daily_stats['txt_cases_cork'])
+df_daily_stats['cases_not_dublincork'] = df_daily_stats['cases'] - (df_daily_stats['dublin'] + df_daily_stats['cork'])
+
+
+# add some pct_change columns and rolling avg of pct changes
+cols_pct_chg = [
+    'txt_cases', 'txt_deaths', 'txt_new_cases', 'txt_new_deaths', 'txt_cases_admitted_icu', 'txt_cases_dublin',
+    'txt_cases_cork', 'txt_cases_not_dublincork', 'txt_cases_healthcare_workers', 'txt_cases_hospitalised', 'txt_clusters',
+    'txt_clusters_cases', 'admitted_icu', 'cases', 'clusters_notified', 'deaths', 'healthcare_workers', 'hospitalised',
+    'dublin', 'cork', 'cases_not_dublincork'
+]
+for col in cols_pct_chg:
+    df_daily_stats[f'{col}_pct_chg'] = df_daily_stats[col].pct_change()
+    df_daily_stats[f'{col}_pct_chg_ma3'] = df_daily_stats[f'{col}_pct_chg'].rolling(3).mean()
+    df_daily_stats[f'{col}_pct_chg_ma5'] = df_daily_stats[f'{col}_pct_chg'].rolling(5).mean()
 
 # drop na cols
 df_daily_stats = df_daily_stats.dropna(how='all', axis=1)
@@ -368,4 +390,4 @@ df_daily_stats_long.to_csv('data/daily_stats_long.csv', index=False)
 
 #%%
 
-#%%
+
