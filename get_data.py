@@ -148,7 +148,7 @@ for press_release_link in press_release_links:
         'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all', '8deathslocatedintheeast',
         '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand',
         '.ofthe174deaths114weremaleand60wer', 'efemale', 'inthenorthwest3', '.</li', '.themeanageofdeathsinirelandis79',
-        '</li'
+        '</li', 'inthenorth2'
     ]
     replacements = [
         ('ten', '10'),
