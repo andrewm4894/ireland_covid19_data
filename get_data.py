@@ -80,7 +80,7 @@ for press_release_link in press_release_links:
         ('informed of (.*) new confirmed cases', 'txt_new_cases'),
         ('To date, (.*) tests have been carried out', 'txt_tests'),
         ('today been informed that (.*) patients diagnosed with COVID-19 in Ireland have died', 'txt_new_deaths'),
-        ('median age of today’s reported deaths is (.*)', 'txt_new_deaths_median_age'),
+        ('median age of today’s reported deaths is (.*).', 'txt_new_deaths_median_age'),
         ('median age of confirmed cases is (.*) years', 'txt_cases_median_age'),
         ('(.*) cases .* have been hospitalised', 'txt_cases_hospitalised'),
         ('cases (.*) have been hospitalised', 'txt_cases_hospitalised_pct'),
@@ -147,7 +147,8 @@ for press_release_link in press_release_links:
         'cases-25%of', 'themedianageofpatientsdiagnosedwithcovid-19whohavediedis79years.', 'ofthe712casesnotified',
         'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all', '8deathslocatedintheeast',
         '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand',
-        '.ofthe174deaths114weremaleand60wer', 'efemale'
+        '.ofthe174deaths114weremaleand60wer', 'efemale', 'inthenorthwest3', '.</li', '.themeanageofdeathsinirelandis79',
+        '</li'
     ]
     replacements = [
         ('ten', '10'),
