@@ -33,6 +33,7 @@ def get_press_release_links(
 
 # get all press releases
 press_release_links = get_press_release_links(page_url='/en/news/7e0924-latest-updates-on-covid-19-coronavirus/')
+press_release_links.extend(get_press_release_links(page_url='/en/publication/20f2e0-updates-on-covid-19-coronavirus-since-january-2020/'))
 press_release_links.extend(get_press_release_links(page_url='/en/publication/ce3fe8-previous-updates-on-covid-19-coronavirus/'))
 print(press_release_links)
 
@@ -187,7 +188,7 @@ for press_release_link in press_release_links:
         'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all', '8deathslocatedintheeast',
         '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand',
         '.ofthe174deaths114weremaleand60wer', 'efemale', 'inthenorthwest3', '.</li', '.themeanageofdeathsinirelandis79',
-        '</li', 'inthenorth2', 'inthenorthwest2', 'atotalof', '*', '3inthenorthwest', '4inthewest'
+        '</li', 'inthenorth2', 'inthenorthwest2', 'atotalof', '*', '3inthenorthwest', '4inthewest', '6inthewest', '2,1'
     ]
     replacements = [
         ('ten', '10'),
@@ -278,6 +279,14 @@ for press_release_link in press_release_links:
             df[df.columns[0]] = df[df.columns[0]].str.replace(' a ', ' ')
             df[df.columns[0]] = df[df.columns[0]].str.replace(' ', '_')
 
+            # clean up number/metric col
+            if len(df.columns) >= 2:
+                df[df.columns[1]] = df[df.columns[1]].astype('str').str.replace('=', '')
+                df[df.columns[1]] = df[df.columns[1]].astype('str').str.replace('2,1%', '2.1%')
+            if len(df.columns) >= 3:
+                df[df.columns[2]] = df[df.columns[2]].astype('str').str.replace('=', '')
+                df[df.columns[2]] = df[df.columns[2]].astype('str').str.replace('2,1%', '2.1%')
+
             #print(tag)
 
             # clean up data a bit
@@ -329,20 +338,20 @@ for press_release_link in press_release_links:
 ##%%
 
 # create a daily stats wide table
-df_daily_stats = df_hospital_statistics.pivot(
+df_daily_stats = df_hospital_statistics.drop_duplicates().pivot(
     index='published_date', columns='measure', values=['number', 'pct']
 ).reset_index()
 df_daily_stats.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_daily_stats.columns]
-df_spread_daily = df_spread.pivot(index='published_date', columns='measure', values=['number', 'pct']).reset_index()
+df_spread_daily = df_spread.drop_duplicates().pivot(index='published_date', columns='measure', values=['number', 'pct']).reset_index()
 df_spread_daily.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_spread_daily.columns]
-df_gender_daily = df_gender.pivot(index='published_date', columns='gender', values='number').reset_index()[['published_date', 'male', 'female']]
-df_county_daily = df_county.pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
-df_age_daily = df_age.pivot(index='published_date', columns='age', values='number').reset_index()[['published_date', '65+']]
-df_text_daily = df_text.pivot(index='published_date', columns='variable', values='value').reset_index()
+df_gender_daily = df_gender.drop_duplicates().pivot(index='published_date', columns='gender', values='number').reset_index()[['published_date', 'male', 'female']]
+df_county_daily = df_county.drop_duplicates().pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
+df_age_daily = df_age.drop_duplicates().pivot(index='published_date', columns='age', values='number').reset_index()[['published_date', '65+']]
+df_text_daily = df_text.drop_duplicates().pivot(index='published_date', columns='variable', values='value').reset_index()
 df_text_daily['txt_growth_rate'] = df_text_daily['txt_new_cases'] / (df_text_daily['txt_cases'] - df_text_daily['txt_new_cases'])
 df_tmp = df_healthcare_workers[['published_date', 'measure', 'number']].copy()
 df_tmp['measure'] = 'health_worker_' + df_tmp['measure']
-df_healthcare_workers_daily = df_tmp.pivot(index='published_date', columns='measure', values='number').reset_index()
+df_healthcare_workers_daily = df_tmp.drop_duplicates().pivot(index='published_date', columns='measure', values='number').reset_index()
 
 # join other daily or wide tables
 df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
