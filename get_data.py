@@ -176,10 +176,12 @@ for press_release_link in press_release_links:
          'txt_new_deaths_south'),
         ('deaths located in the east, .* in the north west, .* in the south and (.*) in the west of the country',
          'txt_new_deaths_west'),
-        ('(.*) new confirmed cases of COVID-19 reported by Irish laboratories',
+        ('additional (.*) new confirmed cases of COVID-19 reported by Irish laboratories',
          'txt_new_cases'),
         ('(.*) confirmed cases of COVID-19 reported by a laboratory in Germany',
          'txt_new_cases_germany'),
+        ('There is now a total of (.*) confirmed cases of COVID-19 in Ireland',
+         'txt_cases'),
 
     ]
     rubbish_strings = [
@@ -188,7 +190,8 @@ for press_release_link in press_release_links:
         'ofthe584casesnotified', 'ofthe438casesnotified', 'ofthe350casesnotified', 'all', '8deathslocatedintheeast',
         '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand',
         '.ofthe174deaths114weremaleand60wer', 'efemale', 'inthenorthwest3', '.</li', '.themeanageofdeathsinirelandis79',
-        '</li', 'inthenorth2', 'inthenorthwest2', 'atotalof', '*', '3inthenorthwest', '4inthewest', '6inthewest', '2,1'
+        '</li', 'inthenorth2', 'inthenorthwest2', 'atotalof', '*', '3inthenorthwest', '4inthewest', '6inthewest', '2,1',
+        '4inthenorth-westand'
     ]
     replacements = [
         ('ten', '10'),
