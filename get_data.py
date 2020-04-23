@@ -182,7 +182,16 @@ for press_release_link in press_release_links:
          'txt_new_cases_germany'),
         ('There is now a total of (.*) confirmed cases of COVID-19 in Ireland',
          'txt_cases'),
-
+        ('There is now a total of (.*) confirmed cases of COVID-19 in Ireland',
+         'txt_cases'),
+        ('the HPSC has been informed of (.*) clusters in residential care settings, .* of which are in nursing homes.',
+         'txt_clusters_residential_care'),
+        ('the HPSC has been informed of .* clusters in residential care settings, (.*) of which are in nursing homes.',
+         'txt_clusters_residential_care_nursing_homes'),
+        ('Of the .* deaths in laboratory confirmed cases, (.*) are associated with residents of residential care settings, of which .* are associated with nursing home settings.',
+        'txt_deaths_residential_care'),
+        ('Of the .* deaths in laboratory confirmed cases, .* are associated with residents of residential care settings, of which (.*) are associated with nursing home settings.',
+        'txt_deaths_residential_care_nursing_homes'),
     ]
     rubbish_strings = [
         ' ', 'anadditional', ',', '</li>', '<listyle="margin-left:15px;text-indent:-15px;">', '(', ')',
@@ -191,7 +200,7 @@ for press_release_link in press_release_links:
         '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand',
         '.ofthe174deaths114weremaleand60wer', 'efemale', 'inthenorthwest3', '.</li', '.themeanageofdeathsinirelandis79',
         '</li', 'inthenorth2', 'inthenorthwest2', 'atotalof', '*', '3inthenorthwest', '4inthewest', '6inthewest', '2,1',
-        '4inthenorth-westand'
+        '4inthenorth-westand', 'laboratoryconfirmed', '2inthewest2inthenorth-westand'
     ]
     replacements = [
         ('ten', '10'),
