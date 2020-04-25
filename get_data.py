@@ -200,7 +200,7 @@ for press_release_link in press_release_links:
         '3inthesouth', '3inthenorth-westand', '6deathslocatedintheeast', '1inthesouthand', '6deathsarelocatedintheeastofthecountry3inthenorthwestofthecountryand',
         '.ofthe174deaths114weremaleand60wer', 'efemale', 'inthenorthwest3', '.</li', '.themeanageofdeathsinirelandis79',
         '</li', 'inthenorth2', 'inthenorthwest2', 'atotalof', '*', '3inthenorthwest', '4inthewest', '6inthewest', '2,1',
-        '4inthenorth-westand', 'laboratoryconfirmed', '2inthewest2inthenorth-westand'
+        '4inthenorth-westand', 'laboratoryconfirmed', '2inthewest2inthenorth-westand', 'confirmed'
     ]
     replacements = [
         ('ten', '10'),
