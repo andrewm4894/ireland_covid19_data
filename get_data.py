@@ -219,6 +219,7 @@ for press_release_link in press_release_links:
         text = re.search(pattern, data, re.IGNORECASE)
         if text:
             value = text.group(1).lower()
+            value_raw = value
             for to_replace, replace_with in replacements:
                 value = value.replace(to_replace, replace_with)
             for rubbish_string in rubbish_strings:
@@ -227,6 +228,7 @@ for press_release_link in press_release_links:
                 value = float(value.replace('%', '')) / 100
             else:
                 value = float(value.replace('%', ''))
+            print(f'value={value}, value_raw={value_raw}, name={name}, pattern={pattern}')
             df_tmp = pd.DataFrame([[published_date, name, value, press_release_link]],
                                   columns=['published_date', 'variable', 'value', 'source'])
             df_text = df_text.append(df_tmp)
@@ -298,6 +300,7 @@ for press_release_link in press_release_links:
             if len(df.columns) >= 3:
                 df[df.columns[2]] = df[df.columns[2]].astype('str').str.replace('=', '')
                 df[df.columns[2]] = df[df.columns[2]].astype('str').str.replace('2,1%', '2.1%')
+                df[df.columns[2]] = np.where(df[df.columns[2]] == '%', '0%', df[df.columns[2]])
 
             #print(tag)
 
