@@ -296,6 +296,7 @@ for press_release_link in press_release_links:
             # clean up number/metric col
             if len(df.columns) >= 2:
                 df[df.columns[1]] = df[df.columns[1]].astype('str').str.replace('=', '')
+                df[df.columns[1]] = df[df.columns[1]].astype('str').str.replace('*', '')
                 df[df.columns[1]] = df[df.columns[1]].astype('str').str.replace('2,1%', '2.1%')
             if len(df.columns) >= 3:
                 df[df.columns[2]] = df[df.columns[2]].astype('str').str.replace('=', '')
