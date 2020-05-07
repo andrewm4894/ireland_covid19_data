@@ -74,6 +74,9 @@ for press_release_link in press_release_links:
             published_date = published_date.strip().zfill(2)
             published_date = f'2020-{month_num}-{published_date}'
 
+    if press_release_link == 'https://www.gov.ie/en/press-release/02ab5c-statement-from-the-national-public-health-emergency-team-wednesday-6/':
+        published_date = '2020-05-06'
+
     # get some metrics from the text
     patterns = [
         ('There are now (.*) confirmed cases of COVID-19 in Ireland',
@@ -329,7 +332,7 @@ for press_release_link in press_release_links:
         for df in df_list_tagged:
             tag = df['tag'].unique()[0]
             if tag == 'hospital_statistics':
-                df_hospital_statistics = df_hospital_statistics.append(df)
+                df_hospital_statistics = df_hospital_statistics.append(df).drop_duplicates()
                 df_hospital_statistics = df_hospital_statistics.dropna(how='all', axis=1)
             elif tag == 'gender':
                 df_gender = df_gender.append(df)
@@ -353,10 +356,14 @@ for press_release_link in press_release_links:
 
 ##%%
 
-# create a daily stats wide table
-df_daily_stats = df_hospital_statistics.drop_duplicates().pivot(
+# agg for any dupes
+df_hospital_statistics = df_hospital_statistics.groupby(
+    ['measure', 'tag', 'published_date', 'source'])[['number', 'pct']].mean().reset_index().drop_duplicates()
+
+df_daily_stats = df_hospital_statistics.pivot(
     index='published_date', columns='measure', values=['number', 'pct']
 ).reset_index()
+
 df_daily_stats.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_daily_stats.columns]
 df_spread_daily = df_spread.drop_duplicates().pivot(index='published_date', columns='measure', values=['number', 'pct']).reset_index()
 df_spread_daily.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_spread_daily.columns]
