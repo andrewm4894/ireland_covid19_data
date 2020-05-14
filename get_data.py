@@ -311,6 +311,7 @@ for press_release_link in press_release_links:
             # clean up data a bit
             if 'number' in df.columns:
                 df = df[df['number'] != 'Number of people']
+                df = df[df['number'] != 'Number of cases']
                 df = df[df['number'] != 'Number']
                 df = df[df['number'] != '% known']
                 df['number'] = np.where(df['number'].astype(str).str.contains('%'), np.nan, df['number'])
