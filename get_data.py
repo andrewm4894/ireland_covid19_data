@@ -119,7 +119,7 @@ for press_release_link in press_release_links:
          'txt_cases_dublin'),
         ('Dublin has the highest number of cases at .* \((.*) of all cases\) followed by Cork with .* cases .*%',
          'txt_cases_dublin_pct'),
-        ('Dublin has the highest number of cases at .* followed by Cork with (.*) cases .*%',
+        ('Dublin has the highest number of cases at .* followed by Cork with ([0-9,]*) cases .*%',
          'txt_cases_cork'),
         ('Dublin has the highest number of cases at .* followed by Cork with .* cases (.*)',
          'txt_cases_cork_pct'),
