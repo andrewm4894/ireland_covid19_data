@@ -59,20 +59,26 @@ for press_release_link in press_release_links:
 
     # get published date from the press release
     published_search = re.search('Published:(.*)2020', data, re.IGNORECASE)
+    published_search_v2 = re.search('Published at:.*>(.*)2020', data, re.IGNORECASE)
+    published_date = ''
     if published_search:
         published_date = published_search.group(1).strip()
-    else:
-        published_date = ''
+    if published_search_v2:
+        published_date = published_search_v2.group(1).strip()
     date_cleaner = [
         ('March', '03'),
         ('April', '04'),
         ('May', '05'),
+        ('June', '06'),
+        ('July', '07'),
     ]
     for month_string, month_num in date_cleaner:
         if month_string in published_date:
             published_date = published_date.replace(month_string, '').strip()
             published_date = published_date.strip().zfill(2)
             published_date = f'2020-{month_num}-{published_date}'
+
+    print(f"published_date = {published_date}")
 
     if press_release_link == 'https://www.gov.ie/en/press-release/02ab5c-statement-from-the-national-public-health-emergency-team-wednesday-6/':
         published_date = '2020-05-06'
@@ -204,7 +210,7 @@ for press_release_link in press_release_links:
         '.ofthe174deaths114weremaleand60wer', 'efemale', 'inthenorthwest3', '.</li', '.themeanageofdeathsinirelandis79',
         '</li', 'inthenorth2', 'inthenorthwest2', 'atotalof', '*', '3inthenorthwest', '4inthewest', '6inthewest', '2,1',
         '4inthenorth-westand', 'laboratoryconfirmed', '2inthewest2inthenorth-westand', 'confirmed', 'atotal', '<li>',
-        '<p>', '.</p'
+        '<p>', '.</p', '<strongreboot-markdown-bold>'
     ]
     replacements = [
         ('ten', '10'),
