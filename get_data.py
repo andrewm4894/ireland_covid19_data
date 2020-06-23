@@ -33,6 +33,7 @@ def get_press_release_links(
 
 # get all press releases
 press_release_links = get_press_release_links(page_url='/en/news/7e0924-latest-updates-on-covid-19-coronavirus/')
+press_release_links.extend(get_press_release_links(page_url='/en/publication/72d92-updates-on-covid-19-coronavirus-from-april-june-2020/'))
 press_release_links.extend(get_press_release_links(page_url='/en/publication/20f2e0-updates-on-covid-19-coronavirus-since-january-2020/'))
 press_release_links.extend(get_press_release_links(page_url='/en/publication/ce3fe8-previous-updates-on-covid-19-coronavirus/'))
 print(press_release_links)
@@ -364,25 +365,63 @@ for press_release_link in press_release_links:
 
 ##%%
 
+df_hospital_statistics_orig = df_hospital_statistics.copy()
+
 # agg for any dupes
-df_hospital_statistics = df_hospital_statistics.groupby(
+df_hospital_statistics = df_hospital_statistics_orig.groupby(
     ['measure', 'tag', 'published_date', 'source'])[['number', 'pct']].mean().reset_index().drop_duplicates()
 
-df_daily_stats = df_hospital_statistics.pivot(
-    index='published_date', columns='measure', values=['number', 'pct']
-).reset_index()
+df_daily_stats = df_hospital_statistics.groupby(['measure', 'tag', 'published_date'])[['number', 'pct']]\
+    .mean()\
+    .reset_index()\
+    .drop_duplicates()\
+    .pivot(index='published_date', columns='measure', values=['number', 'pct'])\
+    .reset_index()
+colnames = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_daily_stats.columns]
+df_daily_stats = df_daily_stats.droplevel(1, axis=1)
+df_daily_stats.columns = colnames
 
-df_daily_stats.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_daily_stats.columns]
-df_spread_daily = df_spread.drop_duplicates().pivot(index='published_date', columns='measure', values=['number', 'pct']).reset_index()
-df_spread_daily.columns = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_spread_daily.columns]
-df_gender_daily = df_gender.drop_duplicates().pivot(index='published_date', columns='gender', values='number').reset_index()[['published_date', 'male', 'female']]
-df_county_daily = df_county.drop_duplicates().pivot(index='published_date', columns='county', values='metric').reset_index()[['published_date', 'dublin', 'cork']]
-df_age_daily = df_age.drop_duplicates().pivot(index='published_date', columns='age', values='number').reset_index()[['published_date', '65+']]
-df_text_daily = df_text.drop_duplicates().pivot(index='published_date', columns='variable', values='value').reset_index()
+df_spread_daily = df_spread.groupby(['measure', 'tag', 'published_date'])[['number', 'pct']].mean()\
+    .reset_index()\
+    .drop_duplicates()\
+    .pivot(index='published_date', columns='measure', values=['number', 'pct'])\
+    .reset_index()
+colnames = ['_'.join(col).replace('number_', '').replace('published_date_', 'published_date') for col in df_spread_daily.columns]
+df_spread_daily = df_spread_daily.droplevel(1, axis=1)
+df_spread_daily.columns = colnames
+
+##%%
+
+df_gender_daily = df_gender.groupby(['gender', 'tag', 'published_date'])['number'].mean()\
+    .reset_index()\
+    .drop_duplicates()\
+    .pivot(index='published_date', columns='gender', values='number')\
+    .reset_index()
+
+df_county_daily = df_county.groupby(['county', 'tag', 'published_date'])['metric'].max()\
+    .reset_index()\
+    .drop_duplicates()\
+    .pivot(index='published_date', columns='county', values='metric')\
+    .reset_index()
+
+df_age_daily = df_age.groupby(['age', 'tag', 'published_date'])['number'].mean()\
+    .reset_index()\
+    .drop_duplicates()\
+    .pivot(index='published_date', columns='age', values='number')\
+    .reset_index()
+
+df_text_daily = df_text.groupby(['variable', 'published_date'])['value'].mean()\
+    .reset_index()\
+    .drop_duplicates()\
+    .pivot(index='published_date', columns='variable', values='value')\
+    .reset_index()
 df_text_daily['txt_growth_rate'] = df_text_daily['txt_new_cases'] / (df_text_daily['txt_cases'] - df_text_daily['txt_new_cases'])
+
 df_tmp = df_healthcare_workers[['published_date', 'measure', 'number']].copy()
 df_tmp['measure'] = 'health_worker_' + df_tmp['measure']
 df_healthcare_workers_daily = df_tmp.drop_duplicates().pivot(index='published_date', columns='measure', values='number').reset_index()
+
+##%%
 
 # join other daily or wide tables
 df_daily_stats = df_daily_stats.merge(df_spread_daily, 'outer', on='published_date')
