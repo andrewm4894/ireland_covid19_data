@@ -438,6 +438,9 @@ cols_todo = [
 for col in cols_todo:
     df_daily_stats[col] = df_daily_stats[col].astype(float)
 
+# ffill
+df_daily_stats = df_daily_stats.ffill()
+
 # add some more derived fields
 df_daily_stats['cases_per_cluster'] = df_daily_stats['cases'] / df_daily_stats['clusters_notified']
 df_daily_stats['pct_male'] = df_daily_stats['male'] / (df_daily_stats['male'] + df_daily_stats['female'])
@@ -454,7 +457,6 @@ df_daily_stats['hospitalised_icu_rate'] = df_daily_stats['admitted_icu'] / df_da
 df_daily_stats['pct_health_workers'] = df_daily_stats['health_worker_total'] / df_daily_stats['cases']
 df_daily_stats['txt_cases_not_dublincork'] = df_daily_stats['txt_cases'] - (df_daily_stats['txt_cases_dublin'] + df_daily_stats['txt_cases_cork'])
 df_daily_stats['cases_not_dublincork'] = df_daily_stats['cases'] - (df_daily_stats['dublin'] + df_daily_stats['cork'])
-
 
 # add some pct_change columns and rolling avg of pct changes
 cols_pct_chg = [
@@ -509,5 +511,4 @@ df_daily_stats.to_csv('data/daily_stats.csv', index=False)
 df_daily_stats_long.to_csv('data/daily_stats_long.csv', index=False)
 
 #%%
-
 
