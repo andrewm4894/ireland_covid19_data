@@ -33,6 +33,7 @@ def get_press_release_links(
 
 # get all press releases
 press_release_links = get_press_release_links(page_url='/en/news/7e0924-latest-updates-on-covid-19-coronavirus/')
+press_release_links.extend(get_press_release_links(page_url='/en/publication/b6a9e-updates-on-covid-19-coronavirus-from-july-and-august-2020/'))
 press_release_links.extend(get_press_release_links(page_url='/en/publication/72d92-updates-on-covid-19-coronavirus-from-april-june-2020/'))
 press_release_links.extend(get_press_release_links(page_url='/en/publication/20f2e0-updates-on-covid-19-coronavirus-since-january-2020/'))
 press_release_links.extend(get_press_release_links(page_url='/en/publication/ce3fe8-previous-updates-on-covid-19-coronavirus/'))
@@ -72,6 +73,7 @@ for press_release_link in press_release_links:
         ('May', '05'),
         ('June', '06'),
         ('July', '07'),
+        ('August', '08'),
     ]
     for month_string, month_num in date_cleaner:
         if month_string in published_date:
