@@ -435,13 +435,15 @@ df_daily_stats = df_daily_stats.merge(df_healthcare_workers_daily, 'outer', on='
 
 # ensure valid types
 cols_todo = [
-    'admitted_icu', 'cases', 'clusters_notified', 'deaths', 'healthcare_workers', 'hospitalised','dublin', 'cork'
+    'admitted_icu', 'cases', 'clusters_notified', 'deaths', 'healthcare_workers', 'hospitalised', 'dublin', 'cork'
 ]
 for col in cols_todo:
     df_daily_stats[col] = df_daily_stats[col].astype(float)
 
 # ffill
-df_daily_stats = df_daily_stats.ffill()
+#df_daily_stats = df_daily_stats.ffill()
+cols = [col for col in list(df_daily_stats.columns) if 'new_' not in col]
+df_daily_stats.loc[:, cols] = df_daily_stats.loc[:, cols].ffill()
 
 # add some more derived fields
 df_daily_stats['cases_per_cluster'] = df_daily_stats['cases'] / df_daily_stats['clusters_notified']
