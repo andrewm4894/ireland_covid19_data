@@ -1,7 +1,7 @@
 # ireland_covid19_data
 
 Data pulled from [here](https://www.gov.ie/en/news/7e0924-latest-updates-on-covid-19-coronavirus/).
-Tableau dashboard [here](https://public.tableau.com/profile/andrew.maguire#!/vizhome/IrealndCovid19Data/Daily).
+Tableau dashboard [here](https://public.tableau.com/profile/andrew.maguire#!/vizhome/IrelandCovid19Data/Percents).
 Blog post [here](https://andrewm4894.com/2020/03/23/ireland-covid19-data/).
  
 ## Notes: 
